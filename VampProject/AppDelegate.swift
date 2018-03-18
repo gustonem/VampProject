@@ -8,17 +8,115 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate, UNUserNotificationCenterDelegate {
+    
 
     var window: UIWindow?
 
+    let beaconManager = ESTBeaconManager()
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.beaconManager.requestAlwaysAuthorization()
+        
+        self.beaconManager.delegate = self
+        
+        let center = UNUserNotificationCenter.current()
+        //center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
+        center.delegate = self
+        
+        let ac1 = setAction(id: "openMaterials", title: "Open Materials")
+        let ac2 = setAction(id: "share", title: "Share")
+        let cat1 = setCategory(identifier: "category", action: [ac1, ac2], intentIdentifiers: [])
+        center.setNotificationCategories([cat1])
+        
+        center.requestAuthorization(options: [.badge, .alert , .sound]) { (success, error) in }
+        
+//        self.beaconManager.startMonitoring(for: CLBeaconRegion(proximityUUID: UUID(uuidString: "BFFBEC6C-E5E0-4045-9A4D-3C5814BA79B9")!,
+//                                                               major: 1, minor: 1, identifier: "monitored region"))
+        
+        self.beaconManager.startMonitoring(for: CLBeaconRegion(proximityUUID: UUID(uuidString: "8492E75F-4FD6-469D-B132-043FE94921D8")!,
+                                                               major: 2394, minor: 21252, identifier: "monitored region"))
         return true
     }
+    
+    func beaconManager(_ manager: Any, didEnter region: CLBeaconRegion) {
+        print("NOTIFICATION")
+        let content = UNMutableNotificationContent()
+        content.title = "VAMP Project"
+        content.body = "Test"
+        content.sound = .default()
+        content.categoryIdentifier = "category"
+        
+        let request = UNNotificationRequest(identifier: "ForgetMeNot", content: content, trigger: nil)
+        DispatchQueue.main.async {
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
+    
+    }
+    
+    func beaconManager(_ manager: Any, didExitRegion region: CLBeaconRegion) {
+        print("EXIT")
+    }
+    
+    
+    //for displaying notification when app is in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //If you don't want to show notification when app is open, do something here else and make a return here.
+        //Even you you don't implement this delegate method, you will not see the notification on the specified controller. So, you have to implement this delegate and make sure the below line execute. i.e. completionHandler.
+        
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    private func setAction(id: String, title: String, options: UNNotificationActionOptions = [.foreground]) -> UNNotificationAction {
+        
+        let action = UNNotificationAction(identifier: id, title: title, options: options)
+        
+        return action
+    }
+    
+    private func setCategory(identifier: String, action:[UNNotificationAction],  intentIdentifiers: [String], options: UNNotificationCategoryOptions = []) -> UNNotificationCategory {
+        
+        let category = UNNotificationCategory(identifier: identifier, actions: action, intentIdentifiers: intentIdentifiers, options: options)
+        
+        return category
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let actionIdentifier = response.actionIdentifier
+        //let content = response.notification.request.content
+        
+        switch actionIdentifier {
+        case UNNotificationDismissActionIdentifier: // Notification was dismissed by user
+            // Do something
+            completionHandler()
+        case UNNotificationDefaultActionIdentifier: // App was opened from notification
+            // Do something
+            openWebsite()
+            completionHandler()
+            
+        case "openMaterials":
+            openWebsite()
+            completionHandler()
+        default:
+            completionHandler()
+        }
+    }
+    
+    func openWebsite() {
+        
+        UIApplication.shared.open(URL(string : "https://is.muni.cz/auth/")!, options: [:], completionHandler: { (status) in
+            
+        })
+    }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

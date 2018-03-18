@@ -13,6 +13,7 @@
 		DE00F623205BA29100D4F48F /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE00F621205BA29100D4F48F /* VampProject.xcdatamodeld */; };
 		DE00F625205BA29100D4F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE00F624205BA29100D4F48F /* Assets.xcassets */; };
 		DE00F628205BA29100D4F48F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE00F626205BA29100D4F48F /* LaunchScreen.storyboard */; };
+		DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		DE00F624205BA29100D4F48F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE00F627205BA29100D4F48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE00F629205BA29100D4F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		DE00F631205BA4D200D4F48F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 		DE00F60E205BA29100D4F48F = {
 			isa = PBXGroup;
 			children = (
+				DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */,
 				DE00F619205BA29100D4F48F /* VampProject */,
 				DE00F618205BA29100D4F48F /* Products */,
 			);
@@ -56,6 +61,7 @@
 		DE00F619205BA29100D4F48F /* VampProject */ = {
 			isa = PBXGroup;
 			children = (
+				DE00F631205BA4D200D4F48F /* ObjCBridge.h */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
 				DE00F61E205BA29100D4F48F /* Main.storyboard */,
@@ -280,10 +286,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gusto.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,10 +306,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gusto.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

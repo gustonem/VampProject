@@ -7,26 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		476172B4207E1CED00AE8922 /* AfterScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* AfterScanViewController.swift */; };
+		476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */; };
+		476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B2207E1CED00AE8922 /* MainViewController.swift */; };
+		476172BA207E1CED00AE8922 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B3207E1CED00AE8922 /* Helper.swift */; };
+		476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */; };
+		476172BE207E200200AE8922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BD207E200200AE8922 /* Main.storyboard */; };
+		D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */; };
 		DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61A205BA29100D4F48F /* AppDelegate.swift */; };
 		DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61C205BA29100D4F48F /* ViewController.swift */; };
-		DE00F620205BA29100D4F48F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE00F61E205BA29100D4F48F /* Main.storyboard */; };
-		DE00F623205BA29100D4F48F /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE00F621205BA29100D4F48F /* VampProject.xcdatamodeld */; };
 		DE00F625205BA29100D4F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE00F624205BA29100D4F48F /* Assets.xcassets */; };
-		DE00F628205BA29100D4F48F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE00F626205BA29100D4F48F /* LaunchScreen.storyboard */; };
 		DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		476172AC207E1CEC00AE8922 /* AfterScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterScanViewController.swift; sourceTree = "<group>"; };
+		476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
+		476172B2207E1CED00AE8922 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		476172B3207E1CED00AE8922 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		476172BD207E200200AE8922 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DE00F617205BA29100D4F48F /* VampProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE00F61A205BA29100D4F48F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE00F61C205BA29100D4F48F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE00F61F205BA29100D4F48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE00F622205BA29100D4F48F /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
 		DE00F624205BA29100D4F48F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE00F627205BA29100D4F48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE00F629205BA29100D4F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		DE00F631205BA4D200D4F48F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
+		ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,18 +45,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */,
+				D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFE88D1C1BC5BBDD62300BAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D054E4117AE65C81209606A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */,
+				ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DE00F60E205BA29100D4F48F = {
 			isa = PBXGroup;
 			children = (
 				DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */,
 				DE00F619205BA29100D4F48F /* VampProject */,
 				DE00F618205BA29100D4F48F /* Products */,
+				D054E4117AE65C81209606A6 /* Pods */,
+				BFE88D1C1BC5BBDD62300BAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +94,14 @@
 				DE00F631205BA4D200D4F48F /* ObjCBridge.h */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
-				DE00F61E205BA29100D4F48F /* Main.storyboard */,
 				DE00F624205BA29100D4F48F /* Assets.xcassets */,
-				DE00F626205BA29100D4F48F /* LaunchScreen.storyboard */,
+				476172AC207E1CEC00AE8922 /* AfterScanViewController.swift */,
+				476172B3207E1CED00AE8922 /* Helper.swift */,
+				476172B2207E1CED00AE8922 /* MainViewController.swift */,
+				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
 				DE00F629205BA29100D4F48F /* Info.plist */,
-				DE00F621205BA29100D4F48F /* VampProject.xcdatamodeld */,
+				476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */,
+				476172BD207E200200AE8922 /* Main.storyboard */,
 			);
 			path = VampProject;
 			sourceTree = "<group>";
@@ -80,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE00F62C205BA29100D4F48F /* Build configuration list for PBXNativeTarget "VampProject" */;
 			buildPhases = (
+				FD58FC9085A22EC1FF7FAD95 /* [CP] Check Pods Manifest.lock */,
 				DE00F613205BA29100D4F48F /* Sources */,
 				DE00F614205BA29100D4F48F /* Frameworks */,
 				DE00F615205BA29100D4F48F /* Resources */,
+				2E0F4287858BAD64E428D4F5 /* [CP] Embed Pods Frameworks */,
+				D444E400141492D643BD9289 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,45 +168,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE00F628205BA29100D4F48F /* LaunchScreen.storyboard in Resources */,
+				476172BE207E200200AE8922 /* Main.storyboard in Resources */,
 				DE00F625205BA29100D4F48F /* Assets.xcassets in Resources */,
-				DE00F620205BA29100D4F48F /* Main.storyboard in Resources */,
+				476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E0F4287858BAD64E428D4F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D444E400141492D643BD9289 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD58FC9085A22EC1FF7FAD95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VampProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE00F613205BA29100D4F48F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE00F623205BA29100D4F48F /* VampProject.xcdatamodeld in Sources */,
+				476172BA207E1CED00AE8922 /* Helper.swift in Sources */,
 				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
+				476172B4207E1CED00AE8922 /* AfterScanViewController.swift in Sources */,
+				476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */,
 				DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */,
+				476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DE00F61E205BA29100D4F48F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE00F61F205BA29100D4F48F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DE00F626205BA29100D4F48F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE00F627205BA29100D4F48F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DE00F62A205BA29100D4F48F /* Debug */ = {
@@ -282,17 +356,18 @@
 		};
 		DE00F62D205BA29100D4F48F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gusto.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -302,17 +377,18 @@
 		};
 		DE00F62E205BA29100D4F48F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gusto.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -344,12 +420,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DE00F621205BA29100D4F48F /* VampProject.xcdatamodeld */ = {
+		476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DE00F622205BA29100D4F48F /* VampProject.xcdatamodel */,
+				476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */,
 			);
-			currentVersion = DE00F622205BA29100D4F48F /* VampProject.xcdatamodel */;
+			currentVersion = 476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */;
 			path = VampProject.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

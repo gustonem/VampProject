@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		476172B4207E1CED00AE8922 /* AfterScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* AfterScanViewController.swift */; };
+		476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */; };
 		476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */; };
 		476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B2207E1CED00AE8922 /* MainViewController.swift */; };
 		476172BA207E1CED00AE8922 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B3207E1CED00AE8922 /* Helper.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		476172AC207E1CEC00AE8922 /* AfterScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterScanViewController.swift; sourceTree = "<group>"; };
+		476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLocatorViewController.swift; sourceTree = "<group>"; };
 		476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
 		476172B2207E1CED00AE8922 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		476172B3207E1CED00AE8922 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
 				DE00F624205BA29100D4F48F /* Assets.xcassets */,
-				476172AC207E1CEC00AE8922 /* AfterScanViewController.swift */,
+				476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */,
 				476172B3207E1CED00AE8922 /* Helper.swift */,
 				476172B2207E1CED00AE8922 /* MainViewController.swift */,
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
@@ -237,7 +237,7 @@
 			files = (
 				476172BA207E1CED00AE8922 /* Helper.swift in Sources */,
 				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
-				476172B4207E1CED00AE8922 /* AfterScanViewController.swift in Sources */,
+				476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */,
 				476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */,
 				DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */,
 				476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */,

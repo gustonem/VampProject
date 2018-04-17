@@ -10,16 +10,15 @@ import UIKit
 
 class DaysTableViewController: UITableViewController {
 
-    var days : [Den] = []
+    var days : [Day] = []
     var myIndex = 0
     
+    let df = DateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //days.filter({!$0.predmety.isEmpty })
-        //self.navigationController?.navigationBar.isHidden = true
-        //days = items[myIndex].days;
-
+        df.weekdaySymbols = ["Pondelok", "Utorok", "Streda", "Štvrtok", "Piatok", "Sobota", "Nedela"]
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,8 +40,7 @@ class DaysTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
 
-        cell?.textLabel?.text = days[indexPath.row].name
-        // Configure the cell...
+        cell?.textLabel?.text = df.weekdaySymbols[days[indexPath.row].nameIndex]
 
         return cell!
     }
@@ -54,7 +52,7 @@ class DaysTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let subjectsController = segue.destination as! SubjectsTableViewController
-        subjectsController.subjects = days[myIndex].predmety
+        subjectsController.subjects = days[myIndex].subjects
     }
 
     /*

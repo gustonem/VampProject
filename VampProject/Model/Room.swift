@@ -8,18 +8,18 @@
 
 import UIKit
 
-class Ucebna: NSObject {
+class Room: NSObject {
     
     var name : String
-    var days = [Den]()
+    var days = [Day]()
     
     init(name: String, value: [String : Any]) {
         
         self.name = name
         
-        if let v = value["dni"] as? [String : Any] {
-            for day in v {
-                let item = Den(name: day.key, value: day.value)
+        if let value = value["dni"] as? [String : Any] {
+            for day in value {
+                let item = Day(name: day.key, value: day.value)
                 self.days.append(item)
             }
         }

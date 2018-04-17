@@ -10,12 +10,12 @@ import UIKit
 
 class SubjectsTableViewController: UITableViewController {
     
-    var subjects : [Predmet] = []
+    var subjects : [Subject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subjects.sort(by: {$0.cas < $1.cas})
+        subjects.sort(by: {$0.time < $1.time})
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,8 +40,8 @@ class SubjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         
-        cell?.textLabel?.text = subjects[indexPath.row].nazov
-        cell?.detailTextLabel?.text = subjects[indexPath.row].cas
+        cell?.textLabel?.text = subjects[indexPath.row].name
+        cell?.detailTextLabel?.text = subjects[indexPath.row].time
         return cell!
     }
 

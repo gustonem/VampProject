@@ -24,6 +24,7 @@
 		DEE3F1DA208522F900346504 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D7208522F900346504 /* TimeTableViewController.swift */; };
 		DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */; };
 		DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D9208522F900346504 /* DaysTableViewController.swift */; };
+		DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1DE20865EF000346504 /* SubjectCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DEE3F1D7208522F900346504 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
 		DEE3F1D9208522F900346504 /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
+		DEE3F1DE20865EF000346504 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 		ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				DEE3F1D9208522F900346504 /* DaysTableViewController.swift */,
 				DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */,
 				DEE3F1D7208522F900346504 /* TimeTableViewController.swift */,
+				DEE3F1DE20865EF000346504 /* SubjectCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */,
 				476172BA207E1CED00AE8922 /* Helper.swift in Sources */,
 				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
 				476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */,

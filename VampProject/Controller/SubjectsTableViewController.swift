@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SafariServices
 
-class SubjectsTableViewController: UITableViewController {
+class SubjectsTableViewController: UITableViewController, subjectCellDelegate {
+    
     
     var subjects : [Subject] = []
 
@@ -38,11 +40,22 @@ class SubjectsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SubjectCell
         
-        cell?.textLabel?.text = subjects[indexPath.row].name
-        cell?.detailTextLabel?.text = subjects[indexPath.row].time
-        return cell!
+        cell.nameLabel.text = subjects[indexPath.row].name
+        cell.timeLabel.text = subjects[indexPath.row].time
+        cell.codeButton.setTitle(String(subjects[indexPath.row].code!.prefix(5)) as String, for: UIControlState.normal)
+        cell.codeButton.sizeToFit()
+        cell.delegate = self
+        //cell?.textLabel?.text = subjects[indexPath.row].name
+        //cell?.detailTextLabel?.text = subjects[indexPath.row].time
+        return cell
+    }
+    
+    func didTapSubjectButton(url: String) {
+        let subjectURL = URL(string: url)!
+        let safariVC = SFSafariViewController(url: subjectURL)
+        present(safariVC, animated: true, completion: nil )
     }
 
     /*

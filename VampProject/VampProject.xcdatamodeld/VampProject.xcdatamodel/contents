@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Day1" representedClassName="Day1" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room1" inverseName="days" inverseEntity="Room1" syncable="YES"/>
+        <relationship name="subjects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subject1" inverseName="day" inverseEntity="Subject1" syncable="YES"/>
+    </entity>
+    <entity name="Room1" representedClassName="Room1" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day1" inverseName="room" inverseEntity="Day1" syncable="YES"/>
+    </entity>
+    <entity name="Subject1" representedClassName="Subject1" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day1" inverseName="subjects" inverseEntity="Day1" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Room1" positionX="-92" positionY="-18" width="128" height="73"/>
+        <element name="Day1" positionX="-38" positionY="128" width="128" height="88"/>
+        <element name="Subject1" positionX="16" positionY="297" width="128" height="103"/>
+    </elements>
 </model>

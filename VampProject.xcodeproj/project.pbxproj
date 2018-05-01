@@ -18,6 +18,13 @@
 		DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61C205BA29100D4F48F /* ViewController.swift */; };
 		DE00F625205BA29100D4F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE00F624205BA29100D4F48F /* Assets.xcassets */; };
 		DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */; };
+		DEE3F1D4208522E800346504 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D1208522E800346504 /* Room.swift */; };
+		DEE3F1D5208522E800346504 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D2208522E800346504 /* Day.swift */; };
+		DEE3F1D6208522E800346504 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D3208522E800346504 /* Subject.swift */; };
+		DEE3F1DA208522F900346504 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D7208522F900346504 /* TimeTableViewController.swift */; };
+		DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */; };
+		DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D9208522F900346504 /* DaysTableViewController.swift */; };
+		DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1DE20865EF000346504 /* SubjectCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		DE00F629205BA29100D4F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		DE00F631205BA4D200D4F48F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
+		DEE3F1D1208522E800346504 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		DEE3F1D2208522E800346504 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		DEE3F1D3208522E800346504 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		DEE3F1D7208522F900346504 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
+		DEE3F1D9208522F900346504 /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
+		DEE3F1DE20865EF000346504 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 		ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +105,9 @@
 		DE00F619205BA29100D4F48F /* VampProject */ = {
 			isa = PBXGroup;
 			children = (
+				DEE3F1DD2085260400346504 /* View */,
+				DEE3F1D0208522C600346504 /* Controller */,
+				DEE3F1CF208522BE00346504 /* Model */,
 				DE00F631205BA4D200D4F48F /* ObjCBridge.h */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
@@ -101,9 +118,37 @@
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
 				DE00F629205BA29100D4F48F /* Info.plist */,
 				476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */,
-				476172BD207E200200AE8922 /* Main.storyboard */,
 			);
 			path = VampProject;
+			sourceTree = "<group>";
+		};
+		DEE3F1CF208522BE00346504 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEE3F1D2208522E800346504 /* Day.swift */,
+				DEE3F1D3208522E800346504 /* Subject.swift */,
+				DEE3F1D1208522E800346504 /* Room.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEE3F1D0208522C600346504 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DEE3F1D9208522F900346504 /* DaysTableViewController.swift */,
+				DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */,
+				DEE3F1D7208522F900346504 /* TimeTableViewController.swift */,
+				DEE3F1DE20865EF000346504 /* SubjectCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DEE3F1DD2085260400346504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				476172BD207E200200AE8922 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +280,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */,
 				476172BA207E1CED00AE8922 /* Helper.swift in Sources */,
 				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
 				476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */,
+				DEE3F1D5208522E800346504 /* Day.swift in Sources */,
+				DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */,
+				DEE3F1DA208522F900346504 /* TimeTableViewController.swift in Sources */,
+				DEE3F1D4208522E800346504 /* Room.swift in Sources */,
+				DEE3F1D6208522E800346504 /* Subject.swift in Sources */,
+				DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */,
 				476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */,
 				DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */,
 				476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */,
@@ -360,14 +412,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -381,14 +433,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;

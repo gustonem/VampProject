@@ -13,6 +13,8 @@
 		476172BA207E1CED00AE8922 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B3207E1CED00AE8922 /* Helper.swift */; };
 		476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */; };
 		476172BE207E200200AE8922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BD207E200200AE8922 /* Main.storyboard */; };
+		47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */; };
+		47E1F787208FEAF9009F9D48 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 47E1F786208FEAF9009F9D48 /* www */; };
 		D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */; };
 		DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61A205BA29100D4F48F /* AppDelegate.swift */; };
 		DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61C205BA29100D4F48F /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 		476172B3207E1CED00AE8922 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476172BD207E200200AE8922 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuniMapViewController.swift; sourceTree = "<group>"; };
+		47E1F786208FEAF9009F9D48 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DE00F617205BA29100D4F48F /* VampProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,11 +113,13 @@
 				DEE3F1D0208522C600346504 /* Controller */,
 				DEE3F1CF208522BE00346504 /* Model */,
 				DE00F631205BA4D200D4F48F /* ObjCBridge.h */,
+				47E1F786208FEAF9009F9D48 /* www */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
 				DE00F624205BA29100D4F48F /* Assets.xcassets */,
 				476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */,
 				476172B3207E1CED00AE8922 /* Helper.swift */,
+				47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */,
 				476172B2207E1CED00AE8922 /* MainViewController.swift */,
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
 				DE00F629205BA29100D4F48F /* Info.plist */,
@@ -213,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E1F787208FEAF9009F9D48 /* www in Resources */,
 				476172BE207E200200AE8922 /* Main.storyboard in Resources */,
 				DE00F625205BA29100D4F48F /* Assets.xcassets in Resources */,
 				476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */,
@@ -284,6 +291,7 @@
 				476172BA207E1CED00AE8922 /* Helper.swift in Sources */,
 				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
 				476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */,
+				47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */,
 				DEE3F1D5208522E800346504 /* Day.swift in Sources */,
 				DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */,
 				DEE3F1DA208522F900346504 /* TimeTableViewController.swift in Sources */,
@@ -412,14 +420,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -433,14 +441,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;

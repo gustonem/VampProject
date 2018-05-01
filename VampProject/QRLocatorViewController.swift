@@ -17,6 +17,10 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     private static var didScanQR: Bool = false
     
     //MARK: Properties
+    @IBOutlet weak var mapContainerView: UIView!
+    @IBOutlet weak var arContainerView: UIView!
+    
+    //Mark: Members
     lazy var reader: QRCodeReader = QRCodeReader()
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
@@ -40,6 +44,21 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     //MARK: Actions
     @IBAction func reScanClick(_ sender: UIButton) {
         startQRScan()
+    }
+    
+    @IBAction func onViewSwitch(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            // Switch to map view
+            mapContainerView.isHidden = false
+            arContainerView.isHidden = true
+        case 1:
+            // Switch to AR view
+            arContainerView.isHidden = false
+            mapContainerView.isHidden = true
+        default:
+            break
+        }
     }
     
     //Mark: Helper methods

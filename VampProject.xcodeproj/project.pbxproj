@@ -10,9 +10,10 @@
 		476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */; };
 		476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */; };
 		476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B2207E1CED00AE8922 /* MainViewController.swift */; };
-		476172BA207E1CED00AE8922 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B3207E1CED00AE8922 /* Helper.swift */; };
 		476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */; };
 		476172BE207E200200AE8922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BD207E200200AE8922 /* Main.storyboard */; };
+		476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476DADD520987FF4003BF687 /* ARLocatorViewController.swift */; };
+		47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC65862098E4A200D345CC /* LocatorScene.swift */; };
 		47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */; };
 		47E1F787208FEAF9009F9D48 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 47E1F786208FEAF9009F9D48 /* www */; };
 		D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */; };
@@ -33,9 +34,10 @@
 		476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLocatorViewController.swift; sourceTree = "<group>"; };
 		476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
 		476172B2207E1CED00AE8922 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		476172B3207E1CED00AE8922 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476172BD207E200200AE8922 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		476DADD520987FF4003BF687 /* ARLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocatorViewController.swift; sourceTree = "<group>"; };
+		47CC65862098E4A200D345CC /* LocatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorScene.swift; sourceTree = "<group>"; };
 		47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuniMapViewController.swift; sourceTree = "<group>"; };
 		47E1F786208FEAF9009F9D48 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		476DADD420987F75003BF687 /* QRLocator */ = {
+			isa = PBXGroup;
+			children = (
+				47CC65852098E47100D345CC /* MuniMap */,
+				47CC65842098E46500D345CC /* AR */,
+				476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */,
+			);
+			path = QRLocator;
+			sourceTree = "<group>";
+		};
+		47CC65842098E46500D345CC /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				476DADD520987FF4003BF687 /* ARLocatorViewController.swift */,
+				47CC65862098E4A200D345CC /* LocatorScene.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		47CC65852098E47100D345CC /* MuniMap */ = {
+			isa = PBXGroup;
+			children = (
+				47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */,
+			);
+			path = MuniMap;
+			sourceTree = "<group>";
+		};
 		BFE88D1C1BC5BBDD62300BAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +146,6 @@
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
 				DE00F624205BA29100D4F48F /* Assets.xcassets */,
-				476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */,
-				476172B3207E1CED00AE8922 /* Helper.swift */,
-				47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */,
 				476172B2207E1CED00AE8922 /* MainViewController.swift */,
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
 				DE00F629205BA29100D4F48F /* Info.plist */,
@@ -141,6 +167,7 @@
 		DEE3F1D0208522C600346504 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				476DADD420987F75003BF687 /* QRLocator */,
 				DEE3F1D9208522F900346504 /* DaysTableViewController.swift */,
 				DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */,
 				DEE3F1D7208522F900346504 /* TimeTableViewController.swift */,
@@ -287,8 +314,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */,
+				476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */,
 				DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */,
-				476172BA207E1CED00AE8922 /* Helper.swift in Sources */,
 				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
 				476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */,
 				47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */,

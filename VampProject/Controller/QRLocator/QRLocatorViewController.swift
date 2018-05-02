@@ -33,10 +33,17 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
         return QRCodeReaderViewController(builder: builder)
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        mapContainerView.isHidden = true
+        arContainerView.isHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         if !QRLocatorViewController.didScanQR {
-            startQRScan()
             QRLocatorViewController.didScanQR = true
+            startQRScan()
+        } else {
+            showMuniMap()
         }
     }
     
@@ -49,13 +56,13 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     @IBAction func onViewSwitch(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            // Switch to map view
-            mapContainerView.isHidden = false
-            arContainerView.isHidden = true
+            // Switch to muni map view
+            showMuniMap()
+            break
         case 1:
-            // Switch to AR view
-            arContainerView.isHidden = false
-            mapContainerView.isHidden = true
+            // Switch to AR locator view
+            showARLocator()
+            break
         default:
             break
         }
@@ -93,6 +100,16 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
         }
     }
     
+    func showMuniMap() {
+        mapContainerView.isHidden = false
+        arContainerView.isHidden = true
+    }
+    
+    func showARLocator() {
+        arContainerView.isHidden = false
+        mapContainerView.isHidden = true
+    }
+    
     //Mark: QR related
     
     func startQRScan() {
@@ -111,8 +128,10 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     }
     
     func afterScan(result:QRCodeReaderResult) {
-        //Show contents popup DEBUG REMOVE
+        //Show contents popup TODO DEBUG REMOVE
         print("Completion with result: \(result.value) of type \(result.metadataType)")
+        
+        showARLocator()
         
         // TODO continue here
     }

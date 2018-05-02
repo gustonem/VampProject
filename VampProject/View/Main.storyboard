@@ -368,20 +368,22 @@
                             <constraint firstItem="OJ9-JP-Rm1" firstAttribute="width" secondItem="UYV-s4-dIS" secondAttribute="width" id="Lb9-PV-UeK"/>
                             <constraint firstItem="OJ9-JP-Rm1" firstAttribute="height" secondItem="UYV-s4-dIS" secondAttribute="height" id="RPm-9e-0gl"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="czD-Iv-unL"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vha-38-jm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2565.5999999999999" y="1150.4926108374384"/>
         </scene>
-        <!--View Controller-->
+        <!--Locator View Controller-->
         <scene sceneID="Kyl-0d-77Y">
             <objects>
-                <viewController id="HQn-CE-Kp8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4k6-P8-fnG" customClass="SKView">
+                <viewController id="HQn-CE-Kp8" customClass="ARLocatorViewController" customModule="VampProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4k6-P8-fnG" customClass="ARSKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bmf-2j-vdV"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjd-8W-Ogi" userLabel="First Responder" sceneMemberID="firstResponder"/>

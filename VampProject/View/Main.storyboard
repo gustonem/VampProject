@@ -64,7 +64,7 @@
                                     <action selector="reScanClick:" destination="gMU-4c-1Pf" eventType="touchUpInside" id="Vvg-VS-AdR"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-mU-6GN">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-mU-6GN">
                                 <rect key="frame" x="127" y="683" width="121" height="29"/>
                                 <segments>
                                     <segment title="Map"/>
@@ -379,16 +379,30 @@
         <scene sceneID="Kyl-0d-77Y">
             <objects>
                 <viewController id="HQn-CE-Kp8" customClass="ARLocatorViewController" customModule="VampProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4k6-P8-fnG" customClass="ARSKView">
+                    <view key="view" contentMode="scaleToFill" id="4k6-P8-fnG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5h-K0-g7s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </arscnView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E5h-K0-g7s" firstAttribute="top" secondItem="4k6-P8-fnG" secondAttribute="top" id="79K-s6-m0Y"/>
+                            <constraint firstAttribute="trailing" secondItem="E5h-K0-g7s" secondAttribute="trailing" id="PaI-gH-fuJ"/>
+                            <constraint firstItem="E5h-K0-g7s" firstAttribute="leading" secondItem="bmf-2j-vdV" secondAttribute="leading" id="YYf-8x-iuJ"/>
+                            <constraint firstAttribute="bottom" secondItem="E5h-K0-g7s" secondAttribute="bottom" id="sqR-Gg-3fD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bmf-2j-vdV"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="E5h-K0-g7s" id="SNs-T2-uoP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjd-8W-Ogi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3294" y="1151"/>
+            <point key="canvasLocation" x="3293.5999999999999" y="1150.4926108374384"/>
         </scene>
     </scenes>
 </document>

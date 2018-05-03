@@ -22,21 +22,21 @@ class LocatorScene: SKScene {
         }
         
         // 1 Retrieve the light estimate from the session’s current frame
-        guard let currentFrame = sceneView.session.currentFrame,
-            let lightEstimate = currentFrame.lightEstimate else {
+        guard let currentFrame  = sceneView.session.currentFrame,
+            let lightEstimate       = currentFrame.lightEstimate else {
                 return
         }
         
         // 2 Calculate a blend factor between 0 and 1, where 0 will be the brightest
         let neutralIntensity: CGFloat = 1000 // fairly bright light
-        let ambientIntensity = min(lightEstimate.ambientIntensity,
-                                   neutralIntensity)
-        let blendFactor = 1 - ambientIntensity / neutralIntensity
+        let ambientIntensity          = min(lightEstimate.ambientIntensity,
+                                              neutralIntensity)
+        let blendFactor               = 1 - ambientIntensity / neutralIntensity
         
         // 3 Calculate how much black should tint the bugs
         for node in children {
-            if let bug = node as? SKSpriteNode {
-                bug.color = .black
+            if let bug      = node as? SKSpriteNode {
+                bug.color            = .black
                 bug.colorBlendFactor = blendFactor
             }
         }
@@ -47,14 +47,14 @@ class LocatorScene: SKScene {
             else { return }
         
         // Create translation matrix
-        var translation = matrix_identity_float4x4
+        var translation         = matrix_identity_float4x4
         // Anchor 0.3m in front
         translation.columns.3.z = -0.3
         
         // Apply translation matrix, create transformation
-        let transform = currentFrame.camera.transform * translation
+        let transform           = currentFrame.camera.transform * translation
         // Create anchor with transformation
-        let anchor = ARAnchor(transform: transform)
+        let anchor              = ARAnchor(transform: transform)
         
         // Add anchor to scene
         sceneView.session.add(anchor: anchor)

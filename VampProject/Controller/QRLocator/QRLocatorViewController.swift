@@ -14,20 +14,21 @@ import AVFoundation
 class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     
     //MARK: Static
-    private static var didScanQR: Bool = false
+    private static var didScanQR: Bool  = true
     
     //MARK: Properties
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var arContainerView: UIView!
     
     //Mark: Members
-    lazy var reader: QRCodeReader = QRCodeReader()
+    lazy var reader: QRCodeReader                 = QRCodeReader()
     lazy var readerVC: QRCodeReaderViewController = {
-        let builder = QRCodeReaderViewControllerBuilder {
-            $0.reader          = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
-            $0.showTorchButton = true
+        let builder     = QRCodeReaderViewControllerBuilder {
+            $0.reader                        = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
+            $0.showTorchButton               = true
             
-            $0.reader.stopScanningWhenCodeIsFound = false
+            $0.reader
+                .stopScanningWhenCodeIsFound = false
         }
         
         return QRCodeReaderViewController(builder: builder)
@@ -35,15 +36,15 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         mapContainerView.isHidden = true
-        arContainerView.isHidden = true
+        arContainerView.isHidden  = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if !QRLocatorViewController.didScanQR {
-            QRLocatorViewController.didScanQR = true
+            QRLocatorViewController.didScanQR   = true
             startQRScan()
         } else {
-            showMuniMap()
+            showARLocator()
         }
     }
     
@@ -78,11 +79,11 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
             
             switch error.code {
             case -11852:
-                alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                alert   = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
                     DispatchQueue.main.async {
-                        if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
+                        if let settingsURL  = URL(string: UIApplicationOpenSettingsURLString) {
                             UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                         }
                     }
@@ -90,7 +91,7 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
                 
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             default:
-                alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
+                alert   = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             }
             
@@ -102,11 +103,11 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     
     func showMuniMap() {
         mapContainerView.isHidden = false
-        arContainerView.isHidden = true
+        arContainerView.isHidden  = true
     }
     
     func showARLocator() {
-        arContainerView.isHidden = false
+        arContainerView.isHidden  = false
         mapContainerView.isHidden = true
     }
     
@@ -118,7 +119,7 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
         readerVC.modalPresentationStyle = .formSheet
         readerVC.delegate               = self
         
-        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+        readerVC.completionBlock        = { (result: QRCodeReaderResult?) in
             if let result = result {
                 self.afterScan(result: result)
             }
@@ -140,10 +141,10 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
         reader.stopScanning()
         
         dismiss(animated: true) { [weak self] in
-            let alert = UIAlertController(
-                title: "QRCodeReader",
-                message: String (format:"%@ (of type %@)", result.value, result.metadataType),
-                preferredStyle: .alert
+            let alert        = UIAlertController(
+                                title: "QRCodeReader",
+                                message: String (format:"%@ (of type %@)", result.value, result.metadataType),
+                                preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             

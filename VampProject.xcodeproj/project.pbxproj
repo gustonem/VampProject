@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4719FD42209BD3FC0085ECC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */; };
+		4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD45209BD59B0085ECC5 /* Assets.xcassets */; };
 		476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */; };
 		476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */; };
 		476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B2207E1CED00AE8922 /* MainViewController.swift */; };
-		476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */; };
 		476172BE207E200200AE8922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BD207E200200AE8922 /* Main.storyboard */; };
 		476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476DADD520987FF4003BF687 /* ARLocatorViewController.swift */; };
 		47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC65862098E4A200D345CC /* LocatorScene.swift */; };
@@ -31,10 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = View/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4719FD44209BD4980085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = /Users/tskypala/Documents/VAMP/VampProject/VampProject/View/LaunchScreen.storyboard; sourceTree = "<absolute>"; };
+		4719FD45209BD59B0085ECC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = VampProject/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLocatorViewController.swift; sourceTree = "<group>"; };
 		476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
 		476172B2207E1CED00AE8922 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476172BD207E200200AE8922 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		476DADD520987FF4003BF687 /* ARLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocatorViewController.swift; sourceTree = "<group>"; };
 		47CC65862098E4A200D345CC /* LocatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorScene.swift; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				DE00F631205BA4D200D4F48F /* ObjCBridge.h */,
 				47E1F786208FEAF9009F9D48 /* www */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
+				4719FD45209BD59B0085ECC5 /* Assets.xcassets */,
+				4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */,
 				DE00F61C205BA29100D4F48F /* ViewController.swift */,
 				476172B2207E1CED00AE8922 /* MainViewController.swift */,
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
@@ -179,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				476172BD207E200200AE8922 /* Main.storyboard */,
-				476172BB207E1DD000AE8922 /* LaunchScreen.storyboard */,
+				4719FD44209BD4980085ECC5 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,8 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E1F787208FEAF9009F9D48 /* www in Resources */,
+				4719FD42209BD3FC0085ECC5 /* LaunchScreen.storyboard in Resources */,
+				4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */,
 				476172BE207E200200AE8922 /* Main.storyboard in Resources */,
-				476172BC207E1DD000AE8922 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

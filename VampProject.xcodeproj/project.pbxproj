@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471959B920A7530B00C66F18 /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471959B820A7530B00C66F18 /* simd+ext.swift */; };
+		471959BB20A7775F00C66F18 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471959BA20A7775F00C66F18 /* QRScannerViewController.swift */; };
 		4719FD42209BD3FC0085ECC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */; };
 		4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD45209BD59B0085ECC5 /* Assets.xcassets */; };
 		476172B4207E1CED00AE8922 /* QRLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		471959B820A7530B00C66F18 /* simd+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "simd+ext.swift"; sourceTree = "<group>"; };
+		471959BA20A7775F00C66F18 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = View/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4719FD44209BD4980085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = /Users/tskypala/Documents/VAMP/VampProject/VampProject/View/LaunchScreen.storyboard; sourceTree = "<absolute>"; };
 		4719FD45209BD59B0085ECC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = VampProject/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -81,6 +85,7 @@
 				47CC65852098E47100D345CC /* MuniMap */,
 				47CC65842098E46500D345CC /* AR */,
 				476172AC207E1CEC00AE8922 /* QRLocatorViewController.swift */,
+				471959BA20A7775F00C66F18 /* QRScannerViewController.swift */,
 			);
 			path = QRLocator;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			children = (
 				476DADD520987FF4003BF687 /* ARLocatorViewController.swift */,
 				47CC65862098E4A200D345CC /* LocatorScene.swift */,
+				471959B820A7530B00C66F18 /* simd+ext.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -333,7 +339,9 @@
 				DEE3F1D6208522E800346504 /* Subject.swift in Sources */,
 				DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */,
 				476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */,
+				471959BB20A7775F00C66F18 /* QRScannerViewController.swift in Sources */,
 				DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */,
+				471959B920A7530B00C66F18 /* simd+ext.swift in Sources */,
 				476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

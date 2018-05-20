@@ -50,12 +50,6 @@
                                     <segue destination="0PX-VF-t1c" kind="embed" id="9ed-gF-sff"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-1r-6pG" userLabel="AR Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <connections>
-                                    <segue destination="HQn-CE-Kp8" kind="embed" id="OyR-JI-RW2"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0E-9A-oLw">
                                 <rect key="frame" x="300" y="44" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -65,7 +59,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-mU-6GN">
-                                <rect key="frame" x="127" y="683" width="121" height="29"/>
+                                <rect key="frame" x="127" y="727" width="121" height="29"/>
                                 <segments>
                                     <segment title="Map"/>
                                     <segment title="AR View"/>
@@ -74,6 +68,12 @@
                                     <action selector="onViewSwitch:" destination="gMU-4c-1Pf" eventType="valueChanged" id="ntc-AO-obf"/>
                                 </connections>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-1r-6pG" userLabel="AR Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <connections>
+                                    <segue destination="HQn-CE-Kp8" kind="embed" id="OyR-JI-RW2"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -91,7 +91,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KSI-oc-gyR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="QR Locator" id="OUb-jj-1YY" userLabel="QR Locator"/>
+                    <navigationItem key="navigationItem" id="JyO-qZ-uur"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="arContainerView" destination="xo0-1r-6pG" id="ofo-SJ-9QI"/>
@@ -100,7 +100,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5En-JU-doj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2928.8000000000002" y="400.74962518740631"/>
+            <point key="canvasLocation" x="2806" y="1173"/>
+        </scene>
+        <!--QR Locator-->
+        <scene sceneID="cKb-Yr-Zz1">
+            <objects>
+                <navigationController id="a0d-pt-iSB" customClass="QRScanner" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="QR Locator" image="QR Scan" id="CmF-GG-Cem"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RUm-jD-kQd">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gMU-4c-1Pf" kind="relationship" relationship="rootViewController" id="cJL-nP-qli"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmW-W2-tZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3281" y="403"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LNb-KI-wqa">
@@ -336,8 +354,8 @@
                     <connections>
                         <segue destination="rza-HL-4Bu" kind="relationship" relationship="viewControllers" id="965-Ni-u2F"/>
                         <segue destination="67p-N4-SZk" kind="relationship" relationship="viewControllers" id="8h2-cB-Ags"/>
-                        <segue destination="gMU-4c-1Pf" kind="relationship" relationship="viewControllers" id="WNY-oe-5zw"/>
                         <segue destination="cEz-la-VQn" kind="relationship" relationship="viewControllers" id="irb-Y0-Lrw"/>
+                        <segue destination="a0d-pt-iSB" kind="relationship" relationship="viewControllers" id="6P0-2i-IkV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUb-kK-QuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vha-38-jm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2565.5999999999999" y="1150.4926108374384"/>
+            <point key="canvasLocation" x="2442" y="1923"/>
         </scene>
         <!--Locator View Controller-->
         <scene sceneID="Kyl-0d-77Y">
@@ -402,7 +420,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjd-8W-Ogi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3293.5999999999999" y="1150.4926108374384"/>
+            <point key="canvasLocation" x="3170" y="1923"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="QR Scan" width="24" height="24"/>
+    </resources>
 </document>

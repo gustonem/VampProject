@@ -14,11 +14,12 @@ import AVFoundation
 class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     
     //MARK: Static
-    private static var didScanQR: Bool  = true
+    private static var parsedScanResult: String? = nil
     
     //MARK: Properties
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var arContainerView: UIView!
+    
     
     //Mark: Members
     lazy var reader: QRCodeReader                 = QRCodeReader()
@@ -28,7 +29,7 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
             $0.showTorchButton               = true
             
             $0.reader
-                .stopScanningWhenCodeIsFound = false
+                .stopScanningWhenCodeIsFound = true
         }
         
         return QRCodeReaderViewController(builder: builder)
@@ -40,12 +41,7 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if !QRLocatorViewController.didScanQR {
-            QRLocatorViewController.didScanQR   = true
-            startQRScan()
-        } else {
-            showARLocator()
-        }
+        showARLocator()
     }
     
     
@@ -107,6 +103,8 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
     }
     
     func showARLocator() {
+//        guard QRLocatorViewController.parsedScanResult != nil else { return }
+        
         arContainerView.isHidden  = false
         mapContainerView.isHidden = true
     }
@@ -121,20 +119,28 @@ class QRLocatorViewController: UIViewController, QRCodeReaderViewControllerDeleg
         
         readerVC.completionBlock        = { (result: QRCodeReaderResult?) in
             if let result = result {
-                self.afterScan(result: result)
+                self.afterScan(scanResult: result)
             }
         }
         
         present(readerVC, animated: true, completion: nil)
     }
     
-    func afterScan(result:QRCodeReaderResult) {
+    func afterScan(scanResult:QRCodeReaderResult) {
         //Show contents popup TODO DEBUG REMOVE
-        print("Completion with result: \(result.value) of type \(result.metadataType)")
+        print("Completion with result: \(scanResult.value) of type \(scanResult.metadataType)")
         
-        showARLocator()
+        QRLocatorViewController.parsedScanResult = parseScanResult(scanResult: scanResult)
         
-        // TODO continue here
+        reader.stopScanning()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            self.showARLocator()
+        })
+    }
+    
+    func parseScanResult(scanResult: QRCodeReaderResult) -> String {
+        return scanResult.value
     }
     
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {

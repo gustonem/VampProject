@@ -10,6 +10,7 @@ import ARKit
 
 class LocatorScene: SKScene {
     
+    
     var isWorldSetUp = false
     var sight: SKSpriteNode!
     var sceneView: ARSKView {

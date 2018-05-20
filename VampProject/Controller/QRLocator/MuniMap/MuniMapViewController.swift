@@ -28,9 +28,9 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
         let html = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
         webView.loadHTMLString(html!, baseURL: nil)
         
-        /*let myURL = URL(string: "https://www.apple.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)*/
+//        let myURL = URL(string: "https://www.apple.com")
+//        let myRequest = URLRequest(url: myURL!)
+//        webView.load(myRequest)
     }
     
 }

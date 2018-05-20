@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QRScannerViewController: UINavigationController {
+class QRScannerViewController: UIViewController {
     
     @IBOutlet var messageLabel:UILabel!
     @IBOutlet var topbar: UIView!
@@ -40,7 +40,7 @@ class QRScannerViewController: UINavigationController {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
         
         guard let captureDevice = deviceDiscoverySession.devices.first else {
-            print("Failed to get the camera device")
+            presentCaptureDeviceError()
             return
         }
         
@@ -63,6 +63,7 @@ class QRScannerViewController: UINavigationController {
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
             print(error)
+            presentReaderError()
             return
         }
         
@@ -73,25 +74,48 @@ class QRScannerViewController: UINavigationController {
         view.layer.addSublayer(videoPreviewLayer!)
         
         
-        
-        
-        
-        // Move the message label and top bar to the front
-        view.bringSubview(toFront: messageLabel)
+//        // Move the message label and top bar to the front
+//        view.bringSubview(toFront: messageLabel)
         
         // Initialize QR Code Frame to highlight the QR code
         qrCodeFrameView = UIView()
         
         if let qrCodeFrameView = qrCodeFrameView {
-            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-            qrCodeFrameView.layer.borderWidth = 2
+            qrCodeFrameView.layer.borderColor = UIColor.blue.cgColor
+            qrCodeFrameView.layer.borderWidth = 1
             view.addSubview(qrCodeFrameView)
             view.bringSubview(toFront: qrCodeFrameView)
         }
     }
     
+    func presentCaptureDeviceError() {
+        let alert: UIAlertController
+        alert   = UIAlertController(title: "Error", message: "Not authorized to use the back camera.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+            DispatchQueue.main.async {
+                if let settingsURL  = URL(string: UIApplicationOpenSettingsURLString) {
+                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                }
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+
+    func presentReaderError() {
+        let alert: UIAlertController
+        alert   = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         // Start video capture.
+        qrCodeFrameView?.frame = CGRect.zero
         captureSession.startRunning()
     }
     
@@ -103,31 +127,13 @@ class QRScannerViewController: UINavigationController {
     
     
     
-    // MARK: - Navigation
-    
+    // MARK: Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        print("SUCCESS!!!!!!!!!")
-        
-//        if
-//            let vc = segue.destination as? ARLocatorViewController,
-////            let sticker = sender as? Sticker
-//        {
-////            if let product = sticker.products.first {
-//
-//                captureSession.stopRunning()
-//
-//                let payment = Payment(products: [product])
-//                payment.type = PaymentType.QR
-//
-//                vc.payment = payment
-//            }
-//        }
+        captureSession.stopRunning()
     }
     
-    // MARK: - Helper methods
-    
+    // MARK: Helper methods
     func launchApp(decodedURL: String) {
         
         if presentedViewController != nil {
@@ -154,16 +160,13 @@ class QRScannerViewController: UINavigationController {
     
 }
 
-
-
-
 extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
-            messageLabel.text = "No QR code is detected"
+            print("No QR code is detected")
             return
         }
         
@@ -175,19 +178,13 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
-            
             print("Completion with result: \(metadataObj.stringValue ?? "n/a") of type \(metadataObj.type)")
             
-            
-//            if  let url = metadataObj.stringValue  {
-//                if url.hasPrefix("https://inovujme.dumo.cz/pay?sticker=") {
-//                    let code = url.replacingOccurrences(of: "https://inovujme.dumo.cz/pay?sticker=", with: "")
-//
-//                    if let sticker = StickersManager.shared.stickerByIdentifier(identifier: code) {
-//                        self.performSegue(withIdentifier: "toDetail", sender: sticker)
-//                    }
-//                }
-//            }
+            if let qrPointString = metadataObj.stringValue  {
+                if let qrPoint = QRPointManager.getQRPoint(pointString: qrPointString) {
+                    self.performSegue(withIdentifier: "toMapQR", sender: qrPoint)
+                }
+            }
         }
     }
     

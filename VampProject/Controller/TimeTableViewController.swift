@@ -12,18 +12,24 @@ class TimeTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var timeTableView: UITableView!
-    let manager = timetableDataManager.shared
-    var items = [Room]()
     
+    var manager = TimeTableDataManager.shared
     var filteredRooms = [Room]()
     var shouldShowSearchResults = false
-
+    
     
     var myIndex = 0
     
+    var refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = manager.items
+        
+        // Do any additional setup after loading the view.
+        refresh(self)
+        
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        timeTableView.addSubview(refreshControl)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,7 +37,19 @@ class TimeTableViewController: UIViewController, UITableViewDataSource, UITableV
             self.timeTableView.deselectRow(at: index, animated: true)
         }
     }
-
+    
+    @objc private func refresh(_ sender: Any) {
+        manager.rooms = [Room]()
+        
+        manager.makeGetCall { (_) in
+            DispatchQueue.main.async {
+                self.timeTableView.reloadData()
+            }
+        }
+        self.timeTableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,7 +60,7 @@ class TimeTableViewController: UIViewController, UITableViewDataSource, UITableV
         if shouldShowSearchResults {
             return filteredRooms.count
         } else {
-            return items.count
+            return manager.rooms.count
         }
     }
     
@@ -52,7 +70,7 @@ class TimeTableViewController: UIViewController, UITableViewDataSource, UITableV
         if shouldShowSearchResults {
             cell?.textLabel?.text = filteredRooms[indexPath.row].name
         } else {
-            cell?.textLabel?.text = items[indexPath.row].name
+            cell?.textLabel?.text = manager.rooms[indexPath.row].name
         }
         return cell!
     }
@@ -67,27 +85,27 @@ class TimeTableViewController: UIViewController, UITableViewDataSource, UITableV
         if shouldShowSearchResults {
             daysController.days = filteredRooms[myIndex].days.filter({!$0.subjects.isEmpty }).sorted(by: { $0.nameIndex < $1.nameIndex})
         } else {
-            daysController.days = items[myIndex].days.filter({!$0.subjects.isEmpty }).sorted(by: { $0.nameIndex < $1.nameIndex})
+            daysController.days = manager.rooms[myIndex].days.filter({!$0.subjects.isEmpty }).sorted(by: { $0.nameIndex < $1.nameIndex})
         }
         
         
     }
-
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
-
+        
     }
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
         self.timeTableView.reloadData()
     }
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredRooms = items.filter({ (names) -> Bool in
+        filteredRooms = manager.rooms.filter({ (names) -> Bool in
             return names.name.lowercased().range(of: searchText.lowercased()) != nil
-            })
-
+        })
+        
         if searchText != "" {
             shouldShowSearchResults = true
         } else {
@@ -95,17 +113,17 @@ class TimeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
         self.timeTableView.reloadData()
     }
-
-
-
+    
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }

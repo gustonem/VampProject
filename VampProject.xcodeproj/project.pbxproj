@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C102EEF24C6E5E4B685401 /* Pods_NearestRoomWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C499C52F39DD18EF1DB3FC43 /* Pods_NearestRoomWidget.framework */; };
 		4711576A20B1F62700F5DA9A /* QRPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4711576920B1F62700F5DA9A /* QRPoint.swift */; };
 		4711576C20B1FD0300F5DA9A /* QRPointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4711576B20B1FD0300F5DA9A /* QRPointManager.swift */; };
 		471959B920A7530B00C66F18 /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471959B820A7530B00C66F18 /* simd+ext.swift */; };
@@ -23,6 +24,10 @@
 		D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */; };
 		DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61A205BA29100D4F48F /* AppDelegate.swift */; };
 		DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */; };
+		DE776B1120B7246C0071EA5D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE776B1020B7246C0071EA5D /* NotificationCenter.framework */; };
+		DE776B1420B7246C0071EA5D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE776B1320B7246C0071EA5D /* TodayViewController.swift */; };
+		DE776B1720B7246C0071EA5D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE776B1520B7246C0071EA5D /* MainInterface.storyboard */; };
+		DE776B1B20B7246C0071EA5D /* NearestRoomWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE776B0F20B7246C0071EA5D /* NearestRoomWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DEE3F1D4208522E800346504 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D1208522E800346504 /* Room.swift */; };
 		DEE3F1D5208522E800346504 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D2208522E800346504 /* Day.swift */; };
 		DEE3F1D6208522E800346504 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D3208522E800346504 /* Subject.swift */; };
@@ -32,6 +37,30 @@
 		DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1DE20865EF000346504 /* SubjectCell.swift */; };
 		DEE4AA41209232FE00E1F88C /* TimeTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4AA40209232FE00E1F88C /* TimeTableDataManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE776B1920B7246C0071EA5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE00F60F205BA29100D4F48F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE776B0E20B7246C0071EA5D;
+			remoteInfo = NearestRoomWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE776B1F20B7246C0071EA5D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE776B1B20B7246C0071EA5D /* NearestRoomWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4711576920B1F62700F5DA9A /* QRPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPoint.swift; sourceTree = "<group>"; };
@@ -49,11 +78,19 @@
 		47E1F786208FEAF9009F9D48 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.debug.xcconfig"; sourceTree = "<group>"; };
+		7528F3958DA9D12710481316 /* Pods-NearestRoomWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearestRoomWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearestRoomWidget/Pods-NearestRoomWidget.release.xcconfig"; sourceTree = "<group>"; };
+		7EA31091A41B6DCE476A566F /* Pods-NearestRoomWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearestRoomWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearestRoomWidget/Pods-NearestRoomWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		C499C52F39DD18EF1DB3FC43 /* Pods_NearestRoomWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearestRoomWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE00F617205BA29100D4F48F /* VampProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE00F61A205BA29100D4F48F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE00F629205BA29100D4F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		DE00F631205BA4D200D4F48F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
+		DE776B0F20B7246C0071EA5D /* NearestRoomWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NearestRoomWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE776B1020B7246C0071EA5D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		DE776B1320B7246C0071EA5D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		DE776B1620B7246C0071EA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DE776B1820B7246C0071EA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEE3F1D1208522E800346504 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		DEE3F1D2208522E800346504 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		DEE3F1D3208522E800346504 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
@@ -72,6 +109,15 @@
 			files = (
 				DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */,
 				D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE776B0C20B7246C0071EA5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE776B1120B7246C0071EA5D /* NotificationCenter.framework in Frameworks */,
+				23C102EEF24C6E5E4B685401 /* Pods_NearestRoomWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */,
+				DE776B1020B7246C0071EA5D /* NotificationCenter.framework */,
+				C499C52F39DD18EF1DB3FC43 /* Pods_NearestRoomWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +177,8 @@
 			children = (
 				70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */,
 				ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */,
+				7EA31091A41B6DCE476A566F /* Pods-NearestRoomWidget.debug.xcconfig */,
+				7528F3958DA9D12710481316 /* Pods-NearestRoomWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -138,6 +188,7 @@
 			children = (
 				DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */,
 				DE00F619205BA29100D4F48F /* VampProject */,
+				DE776B1220B7246C0071EA5D /* NearestRoomWidget */,
 				DE00F618205BA29100D4F48F /* Products */,
 				D054E4117AE65C81209606A6 /* Pods */,
 				BFE88D1C1BC5BBDD62300BAF /* Frameworks */,
@@ -148,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				DE00F617205BA29100D4F48F /* VampProject.app */,
+				DE776B0F20B7246C0071EA5D /* NearestRoomWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +219,16 @@
 				DE00F629205BA29100D4F48F /* Info.plist */,
 			);
 			path = VampProject;
+			sourceTree = "<group>";
+		};
+		DE776B1220B7246C0071EA5D /* NearestRoomWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DE776B1320B7246C0071EA5D /* TodayViewController.swift */,
+				DE776B1520B7246C0071EA5D /* MainInterface.storyboard */,
+				DE776B1820B7246C0071EA5D /* Info.plist */,
+			);
+			path = NearestRoomWidget;
 			sourceTree = "<group>";
 		};
 		DEE3F1CF208522BE00346504 /* Model */ = {
@@ -213,15 +275,35 @@
 				DE00F614205BA29100D4F48F /* Frameworks */,
 				DE00F615205BA29100D4F48F /* Resources */,
 				2E0F4287858BAD64E428D4F5 /* [CP] Embed Pods Frameworks */,
+				DE776B1F20B7246C0071EA5D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DE776B1A20B7246C0071EA5D /* PBXTargetDependency */,
 			);
 			name = VampProject;
 			productName = VampProject;
 			productReference = DE00F617205BA29100D4F48F /* VampProject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DE776B0E20B7246C0071EA5D /* NearestRoomWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE776B1E20B7246C0071EA5D /* Build configuration list for PBXNativeTarget "NearestRoomWidget" */;
+			buildPhases = (
+				A319C6CCED2DDF2B96B5536F /* [CP] Check Pods Manifest.lock */,
+				DE776B0B20B7246C0071EA5D /* Sources */,
+				DE776B0C20B7246C0071EA5D /* Frameworks */,
+				DE776B0D20B7246C0071EA5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NearestRoomWidget;
+			productName = NearestRoomWidget;
+			productReference = DE776B0F20B7246C0071EA5D /* NearestRoomWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -229,7 +311,7 @@
 		DE00F60F205BA29100D4F48F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Gusto Nemec";
 				TargetAttributes = {
@@ -241,6 +323,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					DE776B0E20B7246C0071EA5D = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -258,6 +344,7 @@
 			projectRoot = "";
 			targets = (
 				DE00F616205BA29100D4F48F /* VampProject */,
+				DE776B0E20B7246C0071EA5D /* NearestRoomWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -271,6 +358,14 @@
 				4719FD42209BD3FC0085ECC5 /* LaunchScreen.storyboard in Resources */,
 				4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */,
 				476172BE207E200200AE8922 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE776B0D20B7246C0071EA5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE776B1720B7246C0071EA5D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +392,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A319C6CCED2DDF2B96B5536F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NearestRoomWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD58FC9085A22EC1FF7FAD95 /* [CP] Check Pods Manifest.lock */ = {
@@ -345,7 +458,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE776B0B20B7246C0071EA5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE776B1420B7246C0071EA5D /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE776B1A20B7246C0071EA5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE776B0E20B7246C0071EA5D /* NearestRoomWidget */;
+			targetProxy = DE776B1920B7246C0071EA5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE776B1520B7246C0071EA5D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE776B1620B7246C0071EA5D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DE00F62A205BA29100D4F48F /* Debug */ = {
@@ -459,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWY7F8XYF3;
@@ -480,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AWY7F8XYF3;
@@ -492,6 +634,46 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE776B1C20B7246C0071EA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EA31091A41B6DCE476A566F /* Pods-NearestRoomWidget.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				INFOPLIST_FILE = NearestRoomWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject.NearestRoomWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE776B1D20B7246C0071EA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7528F3958DA9D12710481316 /* Pods-NearestRoomWidget.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
+				INFOPLIST_FILE = NearestRoomWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject.NearestRoomWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,6 +696,15 @@
 			buildConfigurations = (
 				DE00F62D205BA29100D4F48F /* Debug */,
 				DE00F62E205BA29100D4F48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE776B1E20B7246C0071EA5D /* Build configuration list for PBXNativeTarget "NearestRoomWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE776B1C20B7246C0071EA5D /* Debug */,
+				DE776B1D20B7246C0071EA5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

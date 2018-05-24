@@ -6,3 +6,7 @@ target 'VampProject' do
     pod 'QRCodeReader.swift', '~> 8.1.1'
     pod "EstimoteProximitySDK"
 end
+
+target 'NearestRoomWidget' do
+    pod "EstimoteProximitySDK"
+end

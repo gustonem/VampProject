@@ -43,8 +43,8 @@ class SubjectsTableViewController: UITableViewController, subjectCellDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SubjectCell
         
         cell.nameLabel.text = subjects[indexPath.row].name
-        cell.timeLabel.text = subjects[indexPath.row].time
-        cell.codeButton.setTitle(String(subjects[indexPath.row].code!.prefix(5)) as String, for: UIControlState.normal)
+        cell.timeLabel.text = String(subjects[indexPath.row].time) + ":00"
+        cell.codeButton.setTitle(String(subjects[indexPath.row].code!) as String, for: UIControlState.normal)
         cell.codeButton.sizeToFit()
         cell.delegate = self
         //cell?.textLabel?.text = subjects[indexPath.row].name

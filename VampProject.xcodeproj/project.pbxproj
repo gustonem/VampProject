@@ -15,7 +15,6 @@
 		4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD45209BD59B0085ECC5 /* Assets.xcassets */; };
 		476172B4207E1CED00AE8922 /* QRMapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* QRMapperViewController.swift */; };
 		476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */; };
-		476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172B2207E1CED00AE8922 /* MainViewController.swift */; };
 		476172BE207E200200AE8922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BD207E200200AE8922 /* Main.storyboard */; };
 		476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476DADD520987FF4003BF687 /* ARLocatorViewController.swift */; };
 		47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC65862098E4A200D345CC /* LocatorScene.swift */; };
@@ -23,7 +22,6 @@
 		47E1F787208FEAF9009F9D48 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 47E1F786208FEAF9009F9D48 /* www */; };
 		D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */; };
 		DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61A205BA29100D4F48F /* AppDelegate.swift */; };
-		DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61C205BA29100D4F48F /* ViewController.swift */; };
 		DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */; };
 		DEE3F1D4208522E800346504 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D1208522E800346504 /* Room.swift */; };
 		DEE3F1D5208522E800346504 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D2208522E800346504 /* Day.swift */; };
@@ -32,7 +30,7 @@
 		DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */; };
 		DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D9208522F900346504 /* DaysTableViewController.swift */; };
 		DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1DE20865EF000346504 /* SubjectCell.swift */; };
-		DEE4AA41209232FE00E1F88C /* timetableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4AA40209232FE00E1F88C /* timetableDataManager.swift */; };
+		DEE4AA41209232FE00E1F88C /* TimeTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4AA40209232FE00E1F88C /* TimeTableDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +38,10 @@
 		4711576B20B1FD0300F5DA9A /* QRPointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPointManager.swift; sourceTree = "<group>"; };
 		471959B820A7530B00C66F18 /* simd+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "simd+ext.swift"; sourceTree = "<group>"; };
 		471959BA20A7775F00C66F18 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
-		4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = View/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4719FD44209BD4980085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = /Users/tskypala/Documents/VAMP/VampProject/VampProject/View/LaunchScreen.storyboard; sourceTree = "<absolute>"; };
+		4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4719FD45209BD59B0085ECC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = VampProject/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		476172AC207E1CEC00AE8922 /* QRMapperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRMapperViewController.swift; sourceTree = "<group>"; };
 		476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
-		476172B2207E1CED00AE8922 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		476172BD207E200200AE8922 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		476DADD520987FF4003BF687 /* ARLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocatorViewController.swift; sourceTree = "<group>"; };
 		47CC65862098E4A200D345CC /* LocatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorScene.swift; sourceTree = "<group>"; };
@@ -55,7 +51,6 @@
 		70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DE00F617205BA29100D4F48F /* VampProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE00F61A205BA29100D4F48F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE00F61C205BA29100D4F48F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE00F629205BA29100D4F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		DE00F631205BA4D200D4F48F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
@@ -66,7 +61,7 @@
 		DEE3F1D8208522F900346504 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
 		DEE3F1D9208522F900346504 /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
 		DEE3F1DE20865EF000346504 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
-		DEE4AA40209232FE00E1F88C /* timetableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableDataManager.swift; sourceTree = "<group>"; };
+		DEE4AA40209232FE00E1F88C /* TimeTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableDataManager.swift; sourceTree = "<group>"; };
 		ED142D79B796432BFA62E726 /* Pods-VampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,9 +163,6 @@
 				47E1F786208FEAF9009F9D48 /* www */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				4719FD45209BD59B0085ECC5 /* Assets.xcassets */,
-				4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */,
-				DE00F61C205BA29100D4F48F /* ViewController.swift */,
-				476172B2207E1CED00AE8922 /* MainViewController.swift */,
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
 				DE00F629205BA29100D4F48F /* Info.plist */,
 			);
@@ -183,7 +175,7 @@
 				DEE3F1D2208522E800346504 /* Day.swift */,
 				DEE3F1D3208522E800346504 /* Subject.swift */,
 				DEE3F1D1208522E800346504 /* Room.swift */,
-				DEE4AA40209232FE00E1F88C /* timetableDataManager.swift */,
+				DEE4AA40209232FE00E1F88C /* TimeTableDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,8 +195,8 @@
 		DEE3F1DD2085260400346504 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */,
 				476172BD207E200200AE8922 /* Main.storyboard */,
-				4719FD44209BD4980085ECC5 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,7 +213,6 @@
 				DE00F614205BA29100D4F48F /* Frameworks */,
 				DE00F615205BA29100D4F48F /* Resources */,
 				2E0F4287858BAD64E428D4F5 /* [CP] Embed Pods Frameworks */,
-				D444E400141492D643BD9289 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,30 +279,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-frameworks.sh",
+				"${PODS_ROOT}/EstimoteBluetoothScanning/EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework",
+				"${PODS_ROOT}/EstimoteProximitySDK/EstimoteProximitySDK/EstimoteProximitySDK.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EstimoteBluetoothScanning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EstimoteProximitySDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D444E400141492D643BD9289 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD58FC9085A22EC1FF7FAD95 /* [CP] Check Pods Manifest.lock */ = {
@@ -342,19 +322,17 @@
 				47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */,
 				476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */,
 				DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */,
-				DE00F61D205BA29100D4F48F /* ViewController.swift in Sources */,
 				476172B4207E1CED00AE8922 /* QRMapperViewController.swift in Sources */,
 				47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */,
 				DEE3F1D5208522E800346504 /* Day.swift in Sources */,
 				DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */,
 				DEE3F1DA208522F900346504 /* TimeTableViewController.swift in Sources */,
-				DEE4AA41209232FE00E1F88C /* timetableDataManager.swift in Sources */,
+				DEE4AA41209232FE00E1F88C /* TimeTableDataManager.swift in Sources */,
 				DEE3F1D4208522E800346504 /* Room.swift in Sources */,
 				4711576C20B1FD0300F5DA9A /* QRPointManager.swift in Sources */,
 				DEE3F1D6208522E800346504 /* Subject.swift in Sources */,
 				4711576A20B1F62700F5DA9A /* QRPoint.swift in Sources */,
 				DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */,
-				476172B9207E1CED00AE8922 /* MainViewController.swift in Sources */,
 				471959BB20A7775F00C66F18 /* QRScannerViewController.swift in Sources */,
 				DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */,
 				471959B920A7530B00C66F18 /* simd+ext.swift in Sources */,
@@ -478,14 +456,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -499,14 +477,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;

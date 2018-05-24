@@ -1,12 +1,24 @@
 PODS:
+  - EstimoteBluetoothScanning (0.2.0)
+  - EstimoteProximitySDK (0.13.1):
+    - EstimoteBluetoothScanning (~> 0.2.0)
   - QRCodeReader.swift (8.1.1)
 
 DEPENDENCIES:
+  - EstimoteProximitySDK
   - QRCodeReader.swift (~> 8.1.1)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - EstimoteBluetoothScanning
+    - EstimoteProximitySDK
+    - QRCodeReader.swift
+
 SPEC CHECKSUMS:
+  EstimoteBluetoothScanning: d44e46ebebe4e0e2696c4577168cb8660b5d4ee9
+  EstimoteProximitySDK: b9523b79842a39f3738b8a2e46d1303e463abd65
   QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
 
-PODFILE CHECKSUM: 199efd29b246a73116f370dc647e7ff54efd65ed
+PODFILE CHECKSUM: c80eff30828df17dfb72c8ec10cce60912e8a23c
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

@@ -9,19 +9,22 @@
 import UIKit
 
 class Subject: NSObject {
-
-    var time : String
+    
+    var time : Int
     var code : String?
     var name : String?
     
     init(name : String, value : Any) {
-        self.time = name
+        self.time = Int(name.prefix(2)) ?? 0
+        
+        
         if let value = value as? [String : String] {
             if let code = value["kod"], let name = value["predmet"] {
-                self.code = code
+                self.code = String(code.prefix(5))
                 self.name = name
                 
             }
         }
     }
 }
+

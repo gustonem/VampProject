@@ -21,6 +21,8 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
         
         if !hasSetWorldOrigin{
+            hasSetWorldOrigin = true
+            
             var transform = matrix_float4x4()
             
             let positions = imageAnchor.transform.columns.3
@@ -30,32 +32,42 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
             transform.columns.0 = [1.0, 0.0, 0.0, 0.0]
             sceneView.session.setWorldOrigin(relativeTransform: transform)
             sceneView.session.setWorldOrigin(relativeTransform: transform)
-            hasSetWorldOrigin = true
             
             let referenceImage = imageAnchor.referenceImage
             
-            DispatchQueue.main.async {
-                
-                // Create a plane to visualize the initial position of the detected image.
-                let plane = SCNPlane(width: referenceImage.physicalSize.width * 1.5,
-                                     height: referenceImage.physicalSize.height * 1.5)
-                let planeNode = SCNNode(geometry: plane)
-                planeNode.opacity = 1
-                
-                plane.materials = [SCNMaterial()]
-                plane.materials[0].diffuse.contents = UIImage(named: "Point FI MUNI Main Hall")
-                
-                planeNode.eulerAngles.x = -.pi / 2
-                
-                // planeNode.runAction(self.imageHighlightAction)
-                
-                // Add the plane visualization to the scene.
-                node.addChildNode(planeNode)
-            }
+            drawPosterAsync(node: node, referenceImage: referenceImage)
             
             DispatchQueue.main.async {
                 self.addRooms()
             }
+        }
+    }
+    
+    func drawPosterAsync(node: SCNNode, referenceImage: ARReferenceImage) {
+        DispatchQueue.main.async {
+            
+            // Create a plane to visualize the initial position of the detected image.
+            let plane = SCNPlane(width: referenceImage.physicalSize.width * 1.5,
+                                 height: referenceImage.physicalSize.height * 1.5)
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.opacity = 1
+            
+            plane.materials = [SCNMaterial()]
+            
+            
+            guard let scannedPoint = self.getScannedPoint() else {
+                // TODO close self
+                return
+            }
+            
+            plane.materials[0].diffuse.contents = scannedPoint.getUIImage()
+            
+            planeNode.eulerAngles.x = -.pi / 2
+            
+            // planeNode.runAction(self.imageHighlightAction)
+            
+            // Add the plane visualization to the scene.
+            node.addChildNode(planeNode)
         }
     }
     
@@ -155,6 +167,14 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
+    }
+    
+    func getScannedPoint() -> QRPoint? {
+        guard let scannerVc = self.parent as? QRMapperViewController else {
+            return nil
+        }
+        
+        return scannerVc.qrPoint
     }
     
     var objectHighlightAction: SCNAction {

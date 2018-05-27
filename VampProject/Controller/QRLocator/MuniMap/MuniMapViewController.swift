@@ -6,9 +6,10 @@
 //  Copyright © 2018 Gusto Nemec. All rights reserved.
 //
 
-import Foundation
 
+import os.log
 import UIKit
+import ARKit
 import WebKit
 
 class MuniMapViewController: UIViewController, WKUIDelegate {
@@ -23,14 +24,25 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let htmlFile = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "www")
-        let html = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
-        webView.loadHTMLString(html!, baseURL: nil)
-        
-//        let myURL = URL(string: "https://www.apple.com")
-//        let myRequest = URLRequest(url: myURL!)
-//        webView.load(myRequest)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let scannedPoint = self.getScannedPoint() else {
+            // TODO close self
+            return
+        }
+        
+        let muniMapRequest = URLRequest(url: URL(string: scannedPoint.getURL())!)
+        webView.load(muniMapRequest)
+    }
+    
+    func getScannedPoint() -> QRPoint? {
+        guard let scannerVc = self.parent as? QRMapperViewController else {
+            return nil
+        }
+        
+        return scannerVc.qrPoint
+    }
 }

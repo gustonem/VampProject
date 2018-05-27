@@ -12,6 +12,9 @@ import AVFoundation
 
 class QRMapperViewController: UIViewController {
     
+    //MARK: Members
+    var qrPoint: QRPoint?
+    
     //MARK: Properties
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var arContainerView: UIView!

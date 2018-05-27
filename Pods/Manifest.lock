@@ -9,7 +9,7 @@ DEPENDENCIES:
   - QRCodeReader.swift (~> 8.1.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - EstimoteBluetoothScanning
     - EstimoteProximitySDK
     - QRCodeReader.swift
@@ -21,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9c808a793c9b3c5146db12d7e2e70581c756fbe6
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

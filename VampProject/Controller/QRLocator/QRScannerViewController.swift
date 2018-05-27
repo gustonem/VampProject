@@ -11,8 +11,7 @@ import AVFoundation
 
 class QRScannerViewController: UIViewController {
     
-    @IBOutlet var messageLabel:UILabel!
-    @IBOutlet var topbar: UIView!
+    @IBOutlet weak var scanLabel: UILabel!
     
     var captureSession = AVCaptureSession()
     
@@ -84,7 +83,7 @@ class QRScannerViewController: UIViewController {
             qrCodeFrameView.layer.borderColor = UIColor.blue.cgColor
             qrCodeFrameView.layer.borderWidth = 1
             view.addSubview(qrCodeFrameView)
-            view.bringSubview(toFront: qrCodeFrameView)
+            view.bringSubview(toFront: scanLabel)
         }
     }
     
@@ -131,6 +130,14 @@ class QRScannerViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         captureSession.stopRunning()
+        
+        if
+            let vc = segue.destination as? QRMapperViewController,
+            let qrPoint = sender as? QRPoint
+        {
+                vc.qrPoint = qrPoint
+        }
+        
     }
     
     // MARK: Helper methods
@@ -189,4 +196,3 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
     
 }
-

@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0148D3328A77681C03853CCDB80752AF /* Pods-NearestRoomWidget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 144D1D6EED1650917F2C94B619FC8C7C /* Pods-NearestRoomWidget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05689742E2B5DAB62065C89C63FFEA04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
 		0BD974FB7CC76048F45B3F7898742043 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0DA080E7BD7382E7C8C7D459EF4BC /* QRCodeReaderResult.swift */; };
 		1035448487C5989469B75DD48BED30EC /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461CFE1E22F3C5C66BEF559CD16EAE2 /* QRCodeReaderView.swift */; };
-		1C06DD9BB4C3974371488FC3BEA14635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
 		4A9844A09A89758F86A89B92100AA822 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1A33B61DDFDD95D07400FA45BA414 /* SwitchCameraButton.swift */; };
 		52FC00BA2B2E6F970B021CFF953186B6 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFE60C8824F243D25DBDB9308125FB /* QRCodeReader.swift */; };
 		59C0316013B1DD8E62C5F02FD3D4B2FC /* QRCodeReaderViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA6336C578A85D72CAAFC6D838A2EE /* QRCodeReaderViewContainer.swift */; };
@@ -20,13 +18,15 @@
 		8D66721B66B05314E794A12AEF70C37E /* Pods-VampProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B41C6B048933C438EC843B8B1881D0 /* Pods-VampProject-dummy.m */; };
 		8DCBBA0E915886DEFDBCDAC5F46A1925 /* Pods-NearestRoomWidget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B07C79BF69AF977FE6A83F9AEA339693 /* Pods-NearestRoomWidget-dummy.m */; };
 		967BCB5B706557AD7098CE55A591DE4B /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0C68317474D851A93E4E42E009FD86 /* QRCodeReaderViewControllerDelegate.swift */; };
-		A5EF9ABA48F86C3A668C5009BD083F3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		97583B30E5F3780C9B23C39557521E02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E786AFAE5918087F76FC76DC7E990CE /* Foundation.framework */; };
+		9AAA9C3B2353B8E129E0FCC6CB757041 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E786AFAE5918087F76FC76DC7E990CE /* Foundation.framework */; };
+		9D120A263D1106ECBC1843AAAF5C4E81 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0378C8C26FA78A12D8D9C975CBD0D8 /* AVFoundation.framework */; };
 		BD52B96559FC2888CF07842DF4AA1871 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471C751BA69F27D57004B214F30E7C21 /* ReaderOverlayView.swift */; };
 		BE24ED665E7A516CD0C87618B2EA1F5A /* QRCodeReader.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D816E81CCDE2C159B48FB9992D79E1D /* QRCodeReader.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF55815946835FE8B62389DFCEBD5E3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */; };
 		C9C373F2FECDB8A5C33B6E79F85ADEF2 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAF20395439625ECD3F4045431BA14 /* QRCodeReaderViewControllerBuilder.swift */; };
 		CB35C205AEA38AC74BAC7898090C3A8D /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE77B9E45BE904EF7B0C1E0091B63BB /* QRCodeReaderViewController.swift */; };
 		CBCDF6F7D73B7EBCA9E5A5C604E693CD /* Pods-VampProject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA325E35F23ECA8DE15AC1F540DA3FA /* Pods-VampProject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6A3DAB440932871C4B4ECE59D211ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E786AFAE5918087F76FC76DC7E990CE /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		22A1A33B61DDFDD95D07400FA45BA414 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchCameraButton.swift; path = Sources/SwitchCameraButton.swift; sourceTree = "<group>"; };
 		240225B1C9472A66114EA80D213D74D7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2533F78D2621B42989E03BF6EE69B17E /* EBSScanInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EBSScanInfo.h; path = EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework/Headers/EBSScanInfo.h; sourceTree = "<group>"; };
-		2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2C0378C8C26FA78A12D8D9C975CBD0D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		30F4C297C4C6D56593ABE7D444F9E24C /* EBSScanInfoEstimoteLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EBSScanInfoEstimoteLocation.h; path = EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework/Headers/EBSScanInfoEstimoteLocation.h; sourceTree = "<group>"; };
 		323F72250844F1BB8E1B12A3F2618B44 /* QRCodeReader.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QRCodeReader.swift.xcconfig; sourceTree = "<group>"; };
 		3AA325E35F23ECA8DE15AC1F540DA3FA /* Pods-VampProject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VampProject-umbrella.h"; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		705AB4347AC453B8F0AB098A08CE1FBB /* EBSUniversalScanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EBSUniversalScanner.h; path = EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework/Headers/EBSUniversalScanner.h; sourceTree = "<group>"; };
 		79DF80F8979A3438638AF4A516645FF5 /* EBSScanInfoProximityConnectivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EBSScanInfoProximityConnectivity.h; path = EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework/Headers/EBSScanInfoProximityConnectivity.h; sourceTree = "<group>"; };
 		7CFFF423B6A50AA0161D3B0470667EB7 /* EBSScanInfoEstimoteTelemetryA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EBSScanInfoEstimoteTelemetryA.h; path = EstimoteBluetoothScanning/EstimoteBluetoothScanning.framework/Headers/EBSScanInfoEstimoteTelemetryA.h; sourceTree = "<group>"; };
-		840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		7E786AFAE5918087F76FC76DC7E990CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8D4BEBEE2CC189D1E066C8D427B60579 /* Pods-VampProject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VampProject.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96CA6336C578A85D72CAAFC6D838A2EE /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewContainer.swift; path = Sources/QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C06DD9BB4C3974371488FC3BEA14635 /* Foundation.framework in Frameworks */,
+				97583B30E5F3780C9B23C39557521E02 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05689742E2B5DAB62065C89C63FFEA04 /* Foundation.framework in Frameworks */,
+				D6A3DAB440932871C4B4ECE59D211ECA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,18 +124,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF55815946835FE8B62389DFCEBD5E3D /* AVFoundation.framework in Frameworks */,
-				A5EF9ABA48F86C3A668C5009BD083F3C /* Foundation.framework in Frameworks */,
+				9D120A263D1106ECBC1843AAAF5C4E81 /* AVFoundation.framework in Frameworks */,
+				9AAA9C3B2353B8E129E0FCC6CB757041 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151724B63CA8900090E74680751081BF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2C0378C8C26FA78A12D8D9C975CBD0D8 /* AVFoundation.framework */,
+				7E786AFAE5918087F76FC76DC7E990CE /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB9C43F4BAD2992BD9EE60E0C1AC390B /* iOS */,
+				151724B63CA8900090E74680751081BF /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,15 +213,6 @@
 				6B104560765ED005C9A79BA39218936F /* QRCodeReader.swift */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		AB9C43F4BAD2992BD9EE60E0C1AC390B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */,
-				2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		BA9C42D79B4E4C91ED51114B443D4AA8 /* Pods-NearestRoomWidget */ = {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KEZ-X9-2hC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KEZ-X9-2hC">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,31 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notifications-->
-        <scene sceneID="54z-yn-VKv">
-            <objects>
-                <viewController id="67p-N4-SZk" userLabel="Notifications" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0EG-pu-YB1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXM-Vh-Z5t">
-                                <rect key="frame" x="139" y="396" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="avs-y1-1QU"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" id="ytn-Da-syd" userLabel="Notifications"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xg7-Ia-2jZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1902" y="404"/>
-        </scene>
         <!--QR Locator-->
         <scene sceneID="uIu-FB-VHa">
             <objects>
@@ -274,7 +249,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSc-OA-9ze">
-                                            <rect key="frame" x="16" y="11" width="265" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="482" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="TH7-l0-hOc"/>
                                             </constraints>
@@ -283,13 +258,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUs-RD-EfQ">
-                                            <rect key="frame" x="16" y="40" width="265" height="21"/>
+                                            <rect key="frame" x="20" y="40" width="482" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neB-b7-Zp9">
-                                            <rect key="frame" x="289" y="20" width="70" height="30"/>
+                                            <rect key="frame" x="510" y="20" width="70" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="peJ-Nt-W1R"/>
                                             </constraints>
@@ -366,7 +341,6 @@
                         <segue destination="rza-HL-4Bu" kind="relationship" relationship="viewControllers" id="965-Ni-u2F"/>
                         <segue destination="cEz-la-VQn" kind="relationship" relationship="viewControllers" id="irb-Y0-Lrw"/>
                         <segue destination="c3g-7M-teR" kind="relationship" relationship="viewControllers" id="HV3-7E-8He"/>
-                        <segue destination="67p-N4-SZk" kind="relationship" relationship="viewControllers" id="8h2-cB-Ags"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUb-kK-QuD" userLabel="First Responder" sceneMemberID="firstResponder"/>

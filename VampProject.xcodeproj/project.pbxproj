@@ -28,6 +28,10 @@
 		DE776B1420B7246C0071EA5D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE776B1320B7246C0071EA5D /* TodayViewController.swift */; };
 		DE776B1720B7246C0071EA5D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE776B1520B7246C0071EA5D /* MainInterface.storyboard */; };
 		DE776B1B20B7246C0071EA5D /* NearestRoomWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE776B0F20B7246C0071EA5D /* NearestRoomWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEBBA22B20BDB87300E32030 /* TimeTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4AA40209232FE00E1F88C /* TimeTableDataManager.swift */; };
+		DEBBA22C20BDB89200E32030 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D2208522E800346504 /* Day.swift */; };
+		DEBBA22D20BDB89600E32030 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D3208522E800346504 /* Subject.swift */; };
+		DEBBA22E20BDB89800E32030 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D1208522E800346504 /* Room.swift */; };
 		DEE3F1D4208522E800346504 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D1208522E800346504 /* Room.swift */; };
 		DEE3F1D5208522E800346504 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D2208522E800346504 /* Day.swift */; };
 		DEE3F1D6208522E800346504 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F1D3208522E800346504 /* Subject.swift */; };
@@ -462,7 +466,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBBA22D20BDB89600E32030 /* Subject.swift in Sources */,
 				DE776B1420B7246C0071EA5D /* TodayViewController.swift in Sources */,
+				DEBBA22B20BDB87300E32030 /* TimeTableDataManager.swift in Sources */,
+				DEBBA22C20BDB89200E32030 /* Day.swift in Sources */,
+				DEBBA22E20BDB89800E32030 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,14 +610,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -624,14 +632,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = VampProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.0;
@@ -648,10 +656,10 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				INFOPLIST_FILE = NearestRoomWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject.NearestRoomWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject.NearestRoomWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -668,10 +676,10 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4UQ3LXCE4;
+				DEVELOPMENT_TEAM = AWY7F8XYF3;
 				INFOPLIST_FILE = NearestRoomWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xskypala.VampProject.NearestRoomWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = nemec.VampProject.NearestRoomWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

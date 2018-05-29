@@ -34,7 +34,9 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
             return
         }
         
-        let muniMapRequest = URLRequest(url: URL(string: scannedPoint.getURL())!)
+        let muniMapId = scannedPoint.getMuniMapId() // TODO implement
+        let muniMapRequest = URLRequest(url: URL(string: "08668375-551f-4033-a3b8-f1f6715dfb79.htmlpasta.com/")!)
+        
         webView.load(muniMapRequest)
     }
     

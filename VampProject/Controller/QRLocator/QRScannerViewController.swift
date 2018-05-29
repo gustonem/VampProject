@@ -72,10 +72,6 @@ class QRScannerViewController: UIViewController {
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
         
-        
-//        // Move the message label and top bar to the front
-//        view.bringSubview(toFront: messageLabel)
-        
         // Initialize QR Code Frame to highlight the QR code
         qrCodeFrameView = UIView()
         
@@ -124,8 +120,6 @@ class QRScannerViewController: UIViewController {
     }
     
     
-    
-    
     // MARK: Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -139,32 +133,6 @@ class QRScannerViewController: UIViewController {
         }
         
     }
-    
-    // MARK: Helper methods
-    func launchApp(decodedURL: String) {
-        
-        if presentedViewController != nil {
-            return
-        }
-        
-        let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .actionSheet)
-        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
-            
-            if let url = URL(string: decodedURL) {
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-        
-        alertPrompt.addAction(confirmAction)
-        alertPrompt.addAction(cancelAction)
-        
-        present(alertPrompt, animated: true, completion: nil)
-    }
-    
 }
 
 extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -185,12 +153,16 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
-            print("Completion with result: \(metadataObj.stringValue ?? "n/a") of type \(metadataObj.type)")
+            //print("Completion with result: \(metadataObj.stringValue ?? "n/a") of type \(metadataObj.type)")
             
             if let qrPointString = metadataObj.stringValue  {
-                if let qrPoint = QRPointManager.getQRPoint(pointString: qrPointString) {
+                QRPointManager.getQRPoint(pointString: qrPointString, completion: { qrPoint in
+                    guard qrPoint != nil else {
+                        return
+                    }
+                    
                     self.performSegue(withIdentifier: "toMapQR", sender: qrPoint)
-                }
+                })
             }
         }
     }

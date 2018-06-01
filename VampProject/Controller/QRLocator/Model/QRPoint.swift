@@ -10,20 +10,26 @@ import Foundation
 import UIKit
 
 class QRPoint {
-    let DEFAULT_MAP_URL_STRING: String = "https://08668375-551f-4033-a3b8-f1f6715dfb79.htmlpasta.com"
-    let DEFAULT_UI_IMAGE_NAME: String = "Point FI MUNI Main Hall"
     
     let id : NSUUID
+    let label : String
+    let muniMapId : String
     
-    init(id : NSUUID) {
+    init(id : NSUUID, label : String, muniMapId : String) {
         self.id = id
+        self.label = label
+        self.muniMapId = muniMapId
     }
     
-    func getURL() -> String! {
-        return DEFAULT_MAP_URL_STRING // TODO implement
+    func getId() -> NSUUID! {
+        return id
     }
     
-    func getUIImage() -> UIImage! {
-        return UIImage(named: DEFAULT_UI_IMAGE_NAME)! // TODO implement
+    func getLabel() -> String! {
+        return label
+    }
+    
+    func getMuniMapId() -> String! {
+        return muniMapId
     }
 }

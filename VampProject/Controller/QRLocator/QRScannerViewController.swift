@@ -18,6 +18,8 @@ class QRScannerViewController: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     
+    var hasQr: Bool! = false
+    
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                                       AVMetadataObject.ObjectType.code39,
                                       AVMetadataObject.ObjectType.code39Mod43,
@@ -72,10 +74,6 @@ class QRScannerViewController: UIViewController {
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
         
-        
-//        // Move the message label and top bar to the front
-//        view.bringSubview(toFront: messageLabel)
-        
         // Initialize QR Code Frame to highlight the QR code
         qrCodeFrameView = UIView()
         
@@ -115,6 +113,7 @@ class QRScannerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // Start video capture.
         qrCodeFrameView?.frame = CGRect.zero
+        hasQr = false
         captureSession.startRunning()
     }
     
@@ -122,8 +121,6 @@ class QRScannerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     
     // MARK: Navigation
@@ -139,32 +136,6 @@ class QRScannerViewController: UIViewController {
         }
         
     }
-    
-    // MARK: Helper methods
-    func launchApp(decodedURL: String) {
-        
-        if presentedViewController != nil {
-            return
-        }
-        
-        let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .actionSheet)
-        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
-            
-            if let url = URL(string: decodedURL) {
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-        
-        alertPrompt.addAction(confirmAction)
-        alertPrompt.addAction(cancelAction)
-        
-        present(alertPrompt, animated: true, completion: nil)
-    }
-    
 }
 
 extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -185,13 +156,24 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
-            print("Completion with result: \(metadataObj.stringValue ?? "n/a") of type \(metadataObj.type)")
-            
-            if let qrPointString = metadataObj.stringValue  {
-                if let qrPoint = QRPointManager.getQRPoint(pointString: qrPointString) {
-                    self.performSegue(withIdentifier: "toMapQR", sender: qrPoint)
-                }
+            //print("Completion with result: \(metadataObj.stringValue ?? "n/a") of type \(metadataObj.type)")
+            objc_sync_enter(self)
+            guard !self.hasQr else {
+                return
             }
+            if let qrPointString = metadataObj.stringValue  {
+                self.hasQr = true
+                QRPointManager.getQRPoint(pointString: qrPointString, completion: { qrPoint in
+                    guard qrPoint != nil else {
+                        self.hasQr = false
+                        return
+                    }
+                    
+                    self.performSegue(withIdentifier: "toMapQR", sender: qrPoint)
+                    self.hasQr = true
+                })
+            }
+            objc_sync_exit(self)
         }
     }
     

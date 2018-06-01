@@ -20,7 +20,6 @@
 		476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476DADD520987FF4003BF687 /* ARLocatorViewController.swift */; };
 		47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC65862098E4A200D345CC /* LocatorScene.swift */; };
 		47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */; };
-		47E1F787208FEAF9009F9D48 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 47E1F786208FEAF9009F9D48 /* www */; };
 		D991A339DC3879A07ED572A4 /* Pods_VampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */; };
 		DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00F61A205BA29100D4F48F /* AppDelegate.swift */; };
 		DE00F630205BA49200D4F48F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE00F62F205BA49200D4F48F /* EstimoteSDK.framework */; };
@@ -79,7 +78,6 @@
 		476DADD520987FF4003BF687 /* ARLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocatorViewController.swift; sourceTree = "<group>"; };
 		47CC65862098E4A200D345CC /* LocatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorScene.swift; sourceTree = "<group>"; };
 		47E1F784208FE5F3009F9D48 /* MuniMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuniMapViewController.swift; sourceTree = "<group>"; };
-		47E1F786208FEAF9009F9D48 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		608AE7E9014E11ABFF17AA76 /* Pods_VampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A8E712A7D8268CBCB522F3 /* Pods-VampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VampProject/Pods-VampProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7528F3958DA9D12710481316 /* Pods-NearestRoomWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearestRoomWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearestRoomWidget/Pods-NearestRoomWidget.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				DEE3F1D0208522C600346504 /* Controller */,
 				DEE3F1CF208522BE00346504 /* Model */,
 				DE00F631205BA4D200D4F48F /* ObjCBridge.h */,
-				47E1F786208FEAF9009F9D48 /* www */,
 				DE00F61A205BA29100D4F48F /* AppDelegate.swift */,
 				4719FD45209BD59B0085ECC5 /* Assets.xcassets */,
 				476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */,
@@ -358,7 +355,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E1F787208FEAF9009F9D48 /* www in Resources */,
 				4719FD42209BD3FC0085ECC5 /* LaunchScreen.storyboard in Resources */,
 				4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */,
 				476172BE207E200200AE8922 /* Main.storyboard in Resources */,

@@ -10,7 +10,7 @@ import Foundation
 
 class QRPointManager {
     
-    static let QR_POINT_HOSTING_URL: String = "http://server-smart-university.a3c1.starter-us-west-1.openshiftapps.com/qrpoints"
+    static let QR_POINT_HOSTING_URL: String = "http://server-smart-university.a3c1.starter-us-west-1.openshiftapps.com/get/qrpoints"
     
     static var knownQrPoints: [QRPoint]?
     static var downloading: Bool! = false

@@ -14,6 +14,8 @@ import WebKit
 
 class MuniMapViewController: UIViewController, WKUIDelegate {
     
+    let baseMuniMapUrl: String! = "http://server-smart-university.a3c1.starter-us-west-1.openshiftapps.com/munimap"
+    
     var webView: WKWebView!
     
     override func loadView() {
@@ -35,7 +37,7 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
         }
         
         let muniMapId = scannedPoint.getMuniMapId() // TODO implement
-        let muniMapRequest = URLRequest(url: URL(string: "08668375-551f-4033-a3b8-f1f6715dfb79.htmlpasta.com/")!)
+        let muniMapRequest = URLRequest(url: URL(string: baseMuniMapUrl)!)
         
         webView.load(muniMapRequest)
     }

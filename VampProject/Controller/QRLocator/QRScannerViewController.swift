@@ -18,6 +18,8 @@ class QRScannerViewController: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     
+    var hasQr: Bool! = false
+    
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                                       AVMetadataObject.ObjectType.code39,
                                       AVMetadataObject.ObjectType.code39Mod43,
@@ -111,6 +113,7 @@ class QRScannerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // Start video capture.
         qrCodeFrameView?.frame = CGRect.zero
+        hasQr = false
         captureSession.startRunning()
     }
     
@@ -154,16 +157,23 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
             //print("Completion with result: \(metadataObj.stringValue ?? "n/a") of type \(metadataObj.type)")
-            
+            objc_sync_enter(self)
+            guard !self.hasQr else {
+                return
+            }
             if let qrPointString = metadataObj.stringValue  {
+                self.hasQr = true
                 QRPointManager.getQRPoint(pointString: qrPointString, completion: { qrPoint in
                     guard qrPoint != nil else {
+                        self.hasQr = false
                         return
                     }
                     
                     self.performSegue(withIdentifier: "toMapQR", sender: qrPoint)
+                    self.hasQr = true
                 })
             }
+            objc_sync_exit(self)
         }
     }
     

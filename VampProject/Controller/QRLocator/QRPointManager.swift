@@ -10,9 +10,10 @@ import Foundation
 
 class QRPointManager {
     
-    static let QR_POINT_HOSTING_URL: String = "https://3fb9a5ba-07d1-4396-9bc2-a207791118f5.htmlpasta.com" // TODO fix hosting
+    static let QR_POINT_HOSTING_URL: String = "http://server-smart-university.a3c1.starter-us-west-1.openshiftapps.com/qrpoints"
     
     static var knownQrPoints: [QRPoint]?
+    static var downloading: Bool! = false
     
     static func getQRPoint(pointString: String, completion: @escaping (_: QRPoint?)->()) {
         guard let pointId = parseIdFromQRPointString(pointString: pointString) else {
@@ -70,10 +71,15 @@ class QRPointManager {
             return
         }
         
-        downloadQrPoints(completion: completion)
+        if downloading {
+            completion(nil)
+        } else {
+            downloadQrPoints(completion: completion)
+        }
     }
     
     static private func downloadQrPoints(completion: @escaping (_: [QRPoint]?)->()) {
+        downloading = true
         // Asynchronous Http call to your api url, using URLSession:
         URLSession.shared.dataTask(with: URL(string: QR_POINT_HOSTING_URL)!) { (data, response, error) -> Void in
             // Check if data was received successfully
@@ -86,7 +92,7 @@ class QRPointManager {
                             knownQrPoints = []
                             for qrPointJson in qrPoints {
                                 let qrPointUuidString = qrPointJson["id"] as? String
-                                if qrPointUuidString != nil {
+                                guard qrPointUuidString != nil else {
                                     continue
                                 }
                                 let uuid = NSUUID(uuidString: qrPointUuidString!)
@@ -98,20 +104,17 @@ class QRPointManager {
                                 }
                             }
                             completion(knownQrPoints)
+                            downloading = false
                             return
                         }
                     }
-                    completion(nil)
-                    return
                 } catch let error {
-                    print(error.localizedDescription)
-                    completion(nil)
-                    return
+                    print("QRPoints JSON parsing error: " + error.localizedDescription)
                 }
-            } else {
-                completion(nil)
-                return
             }
+            
+            completion(nil)
+            downloading = false
         }.resume()
     }
 }

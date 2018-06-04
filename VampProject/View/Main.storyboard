@@ -19,27 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ML3-7Y-lrd" userLabel="Map Container View">
+                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-1r-6pG" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <connections>
-                                    <segue destination="0PX-VF-t1c" kind="embed" id="9ed-gF-sff"/>
-                                </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-1r-6pG" userLabel="AR Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <connections>
-                                    <segue destination="HQn-CE-Kp8" kind="embed" id="OyR-JI-RW2"/>
-                                </connections>
-                            </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-mU-6GN">
-                                <rect key="frame" x="127" y="683" width="121" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-mU-6GN">
+                                <rect key="frame" x="127" y="683" width="129" height="29"/>
                                 <segments>
-                                    <segment title="Map"/>
                                     <segment title="AR View"/>
+                                    <segment title="Map"/>
                                 </segments>
-                                <connections>
-                                    <action selector="onViewSwitch:" destination="gMU-4c-1Pf" eventType="valueChanged" id="ntc-AO-obf"/>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQE-mF-fEw">
                                 <rect key="frame" x="22" y="44" width="34" height="30"/>
@@ -54,27 +42,23 @@
                         <constraints>
                             <constraint firstItem="xo0-1r-6pG" firstAttribute="height" secondItem="Qmr-RO-DIA" secondAttribute="height" id="4tx-yh-PyD"/>
                             <constraint firstItem="xo0-1r-6pG" firstAttribute="width" secondItem="Qmr-RO-DIA" secondAttribute="width" id="Dg7-R5-kTc"/>
-                            <constraint firstItem="k1A-mU-6GN" firstAttribute="centerX" secondItem="ML3-7Y-lrd" secondAttribute="centerX" id="Kc6-20-YcX"/>
                             <constraint firstItem="k1A-mU-6GN" firstAttribute="top" secondItem="KSI-oc-gyR" secondAttribute="top" constant="639" id="LAf-0S-5ck"/>
-                            <constraint firstItem="xo0-1r-6pG" firstAttribute="top" secondItem="ML3-7Y-lrd" secondAttribute="top" id="Pwa-2r-lz0"/>
-                            <constraint firstItem="xo0-1r-6pG" firstAttribute="leading" secondItem="ML3-7Y-lrd" secondAttribute="leading" id="bPQ-14-66I"/>
-                            <constraint firstItem="ML3-7Y-lrd" firstAttribute="height" secondItem="Qmr-RO-DIA" secondAttribute="height" id="iP6-ZJ-ybb"/>
                             <constraint firstItem="xo0-1r-6pG" firstAttribute="leading" secondItem="Qmr-RO-DIA" secondAttribute="leading" id="iRw-rV-bbS"/>
                             <constraint firstItem="k1A-mU-6GN" firstAttribute="leading" secondItem="KSI-oc-gyR" secondAttribute="leading" constant="127" id="y50-i8-TTv"/>
                             <constraint firstItem="xo0-1r-6pG" firstAttribute="top" secondItem="Qmr-RO-DIA" secondAttribute="top" id="yGj-y3-VEX"/>
-                            <constraint firstItem="ML3-7Y-lrd" firstAttribute="width" secondItem="Qmr-RO-DIA" secondAttribute="width" id="zLl-Qu-mW9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KSI-oc-gyR"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="arContainerView" destination="xo0-1r-6pG" id="ofo-SJ-9QI"/>
-                        <outlet property="mapContainerView" destination="ML3-7Y-lrd" id="qwB-vD-Frf"/>
+                        <outlet property="containerView" destination="xo0-1r-6pG" id="Ygq-fr-tKt"/>
+                        <outlet property="segmentedControl" destination="k1A-mU-6GN" id="UaQ-wG-D0Q"/>
+                        <outlet property="view" destination="xo0-1r-6pG" id="5oe-ab-SKL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5En-JU-doj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2806" y="1173"/>
+            <point key="canvasLocation" x="2805.5999999999999" y="1172.6600985221676"/>
         </scene>
         <!--QR Locator-->
         <scene sceneID="gWM-wR-I1v">
@@ -249,7 +233,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSc-OA-9ze">
-                                            <rect key="frame" x="20" y="11" width="482" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="265" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="TH7-l0-hOc"/>
                                             </constraints>
@@ -258,13 +242,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUs-RD-EfQ">
-                                            <rect key="frame" x="20" y="40" width="482" height="21"/>
+                                            <rect key="frame" x="16" y="40" width="265" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neB-b7-Zp9">
-                                            <rect key="frame" x="510" y="20" width="70" height="30"/>
+                                            <rect key="frame" x="289" y="20" width="70" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="peJ-Nt-W1R"/>
                                             </constraints>
@@ -387,7 +371,7 @@
         <!--Muni Map View Controller-->
         <scene sceneID="Qk1-sr-F47">
             <objects>
-                <viewController id="0PX-VF-t1c" customClass="MuniMapViewController" customModule="VampProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MuniMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0PX-VF-t1c" customClass="MuniMapViewController" customModule="VampProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UYV-s4-dIS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +402,7 @@
         <!--Locator View Controller-->
         <scene sceneID="Kyl-0d-77Y">
             <objects>
-                <viewController id="HQn-CE-Kp8" customClass="ARLocatorViewController" customModule="VampProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ARLocatorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HQn-CE-Kp8" customClass="ARLocatorViewController" customModule="VampProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4k6-P8-fnG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

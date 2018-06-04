@@ -24,6 +24,7 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
         webView.uiDelegate = self
         view = webView
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,11 +36,17 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
             // TODO close self
             return
         }
-        
-        let muniMapId = scannedPoint.getMuniMapId() // TODO implement
-        let muniMapRequest = URLRequest(url: URL(string: baseMuniMapUrl)!)
-        
+
+        //        let muniMapId = scannedPoint.muniMapId // TODO implement
+        let muniMapRequest = URLRequest(url: URL(string: "sme.sk")!)
+
         webView.load(muniMapRequest)
+//        let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height))
+////        myWebView.delegate = self
+//        self.view.addSubview(myWebView)
+//        let url = URL (string: baseMuniMapUrl);
+//        let request = URLRequest(url: url! as URL);
+//        myWebView.loadRequest(request);
     }
     
     func getScannedPoint() -> QRPoint? {

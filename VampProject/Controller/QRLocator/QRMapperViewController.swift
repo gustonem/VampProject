@@ -15,46 +15,103 @@ class QRMapperViewController: UIViewController {
     //MARK: Members
     var qrPoint: QRPoint?
     
-    //MARK: Properties
-    @IBOutlet weak var mapContainerView: UIView!
-    @IBOutlet weak var arContainerView: UIView!
-
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    override func viewDidAppear(_ animated: Bool) {
-        showARLocator()
+    @IBOutlet weak var containerView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
     }
     
+    private func setupView() {
+        setupSegmentedControl()
+        
+        updateView()
+    }
     
     //MARK: Actions
     @IBAction func onBack(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func onViewSwitch(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            // Switch to muni map view
-            showMuniMap()
-            break
-        case 1:
-            // Switch to AR locator view
-            showARLocator()
-            break
-        default:
-            break
+    private func setupSegmentedControl() {
+        // Configure Segmented Control
+        segmentedControl.removeAllSegments()
+        segmentedControl.insertSegment(withTitle: "AR View", at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: "Map", at: 1, animated: false)
+        segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
+        
+        // Select First Segment
+        segmentedControl.selectedSegmentIndex = 0
+    }
+    
+    @objc
+    func selectionDidChange(_ sender: UISegmentedControl) {
+        updateView()
+    }
+    
+    private func updateView() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            remove(asChildViewController: mapViewController)
+            add(asChildViewController: arViewController)
+        } else {
+            remove(asChildViewController: arViewController)
+            add(asChildViewController: mapViewController)
         }
     }
     
-    //Mark: Helper methods
-    func showMuniMap() {
-        mapContainerView.isHidden = false
-        arContainerView.isHidden  = true
+    private func add(asChildViewController viewController: UIViewController) {
+        // Add Child View Controller
+        addChildViewController(viewController)
+        
+        // Add Child View as Subview
+        containerView.addSubview(viewController.view)
+        
+        // Configure Child View
+        viewController.view.frame = containerView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // Notify Child View Controller
+        viewController.didMove(toParentViewController: self)
     }
     
-    func showARLocator() {
-//        guard QRLocatorViewController.parsedScanResult != nil else { return }
+    private func remove(asChildViewController viewController: UIViewController) {
+        // Notify Child View Controller
+        viewController.willMove(toParentViewController: nil)
         
-        arContainerView.isHidden  = false
-        mapContainerView.isHidden = true
+        // Remove Child View From Superview
+        viewController.view.removeFromSuperview()
+        
+        // Notify Child View Controller
+        viewController.removeFromParentViewController()
     }
+    
+    private lazy var mapViewController: MuniMapViewController = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: "MuniMapViewController") as! MuniMapViewController
+        
+//        // Add View Controller as Child View Controller
+//        self.add(asChildViewController: viewController)
+        
+        return viewController
+    }()
+    
+    private lazy var arViewController: ARLocatorViewController = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: "ARLocatorViewController") as! ARLocatorViewController
+        
+//        // Add View Controller as Child View Controller
+//        self.add(asChildViewController: viewController)
+        
+        return viewController
+    }()
+    
 }
+

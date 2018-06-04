@@ -19,8 +19,11 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
+        guard let scannedPoint = self.getScannedPoint() else {
+            return
+        }
         
-        if !hasSetWorldOrigin{
+        if !hasSetWorldOrigin {
             hasSetWorldOrigin = true
             
             var transform = matrix_float4x4()
@@ -36,10 +39,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
             let referenceImage = imageAnchor.referenceImage
             
             drawPosterAsync(node: node, referenceImage: referenceImage)
-            
-            DispatchQueue.main.async {
-                self.addRooms()
-            }
+            addRoomsAsync(rooms: scannedPoint.rooms)
         }
     }
     
@@ -51,16 +51,10 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
                                  height: referenceImage.physicalSize.height * 1.5)
             let planeNode = SCNNode(geometry: plane)
             planeNode.opacity = 1
-            
             plane.materials = [SCNMaterial()]
             
+//            let pointLabel = scannedPoint.label // TODO implement
             
-            guard let scannedPoint = self.getScannedPoint() else {
-                // TODO close self
-                return
-            }
-            
-            let pointLabel = scannedPoint.getLabel() // TODO implement
             plane.materials[0].diffuse.contents = UIImage(named: "Point FI MUNI Main Hall")!
             
             planeNode.eulerAngles.x = -.pi / 2
@@ -72,26 +66,22 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-    func addRooms() {
+    func addRoomsAsync(rooms: [ARRoom]) {
         
-        // TODO parse and create real data
-        
-        // REMOVE DEBUG
-        sceneView.scene.rootNode.addChildNode(
-            getRoomNode(widthMeters: 0.03, heightMeters: 0.06, lenghtMeters: 0.01,
-                        rightMeters: 0, upMeters: 0, backMeters: 0))
-        
-        sceneView.scene.rootNode.addChildNode(
-            getRoomNode(widthMeters: 0.07, heightMeters: 0.07, lenghtMeters: 0.07,
-                        rightMeters: -0.45, upMeters: 0.1, backMeters: 0))
-        
+        DispatchQueue.main.async {
+            for room in rooms {
+                self.sceneView.scene.rootNode.addChildNode(
+                    self.getRoomNode(widthMeters: room.dimensions.width, heightMeters: room.dimensions.height, lenghtMeters: room.dimensions.length,
+                                     rightMeters: room.position.right!, upMeters: room.position.up!, frontMeters: room.position.front!))
+            }
+        }
     }
     
     func getRoomNode(widthMeters: CGFloat, heightMeters: CGFloat, lenghtMeters: CGFloat,
-                     rightMeters: CGFloat, upMeters: CGFloat, backMeters: CGFloat) -> SCNNode {
+                     rightMeters: CGFloat, upMeters: CGFloat, frontMeters: CGFloat) -> SCNNode {
         let cubeNode = SCNNode(geometry: getMeshBox(width: widthMeters, height: heightMeters, length:
             lenghtMeters, chamferRadius: 0))
-        cubeNode.position = SCNVector3(rightMeters, upMeters, backMeters) // SceneKit/AR coordinates are in meters
+        cubeNode.position = SCNVector3(rightMeters, upMeters, -frontMeters) // SceneKit/AR coordinates are in meters
         cubeNode.runAction(self.objectHighlightAction)
         return cubeNode
     }

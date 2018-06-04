@@ -9,27 +9,22 @@
 import Foundation
 import UIKit
 
-class QRPoint {
+struct QRPoint : Decodable {
     
-    let id : NSUUID
+    let uuidString : String
     let label : String
     let muniMapId : String
     
-    init(id : NSUUID, label : String, muniMapId : String) {
-        self.id = id
-        self.label = label
-        self.muniMapId = muniMapId
+    let rooms : [ARRoom]
+    
+    func getUuid() -> NSUUID? {
+        return NSUUID(uuidString: uuidString)
     }
     
-    func getId() -> NSUUID! {
-        return id
-    }
-    
-    func getLabel() -> String! {
-        return label
-    }
-    
-    func getMuniMapId() -> String! {
-        return muniMapId
+    private enum CodingKeys : String, CodingKey {
+        case uuidString = "id"
+        case label
+        case muniMapId = "munimap"
+        case rooms = "arObjects"
     }
 }

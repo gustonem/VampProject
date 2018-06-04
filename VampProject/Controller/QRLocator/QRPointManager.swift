@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ARKit
 
 class QRPointManager {
     
@@ -16,7 +17,7 @@ class QRPointManager {
     static var downloading: Bool! = false
     
     static func getQRPoint(pointString: String, completion: @escaping (_: QRPoint?)->()) {
-        guard let pointId = parseIdFromQRPointString(pointString: pointString) else {
+        guard let parsedPointId = parseIdFromQRPointString(pointString: pointString) else {
             completion(nil)
             return
         }
@@ -28,7 +29,11 @@ class QRPointManager {
             }
             
             for qrPoint in qrPoints! {
-                if qrPoint.getId().isEqual(pointId) {
+                guard let pointId = qrPoint.getUuid() else {
+                    continue
+                }
+                
+                if pointId.isEqual(parsedPointId) {
                     completion(qrPoint)
                 }
             }
@@ -84,37 +89,56 @@ class QRPointManager {
         URLSession.shared.dataTask(with: URL(string: QR_POINT_HOSTING_URL)!) { (data, response, error) -> Void in
             // Check if data was received successfully
             if error == nil && data != nil {
-                print(String(decoding: data!, as: UTF8.self))
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String : Any] {
-                        //For getting customer_id try like this
-                        if let qrPoints = json["qrPoints"] as? [[String: Any]] {
-                            knownQrPoints = []
-                            for qrPointJson in qrPoints {
-                                let qrPointUuidString = qrPointJson["id"] as? String
-                                guard qrPointUuidString != nil else {
-                                    continue
-                                }
-                                let uuid = NSUUID(uuidString: qrPointUuidString!)
-                                let qrPointLabel = qrPointJson["label"] as? String
-                                let qrPointMuniMapId = qrPointJson["munimap"] as? String
-                                
-                                if uuid != nil && qrPointLabel != nil && qrPointMuniMapId != nil {
-                                    knownQrPoints?.append(QRPoint(id: uuid!, label: qrPointLabel!, muniMapId: qrPointMuniMapId!))
-                                }
-                            }
-                            completion(knownQrPoints)
-                            downloading = false
-                            return
-                        }
-                    }
-                } catch let error {
-                    print("QRPoints JSON parsing error: " + error.localizedDescription)
+                if let parsedQrPoints = parseQrPoints(data: data!) {
+                    knownQrPoints = parsedQrPoints
+                    downloading = false
+                    completion(parsedQrPoints)
+                    return
                 }
             }
             
             completion(nil)
             downloading = false
         }.resume()
+    }
+    
+    static private func parseQrPoints(data: Data!) -> [QRPoint]? {
+        do {
+            let result = try JSONDecoder().decode(GetPointsResponse.self, from: data)
+            return result.qrPoints
+        } catch {
+            print(error)
+        }
+        return nil
+        
+//
+//        do {
+//            if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String : Any] {
+//                //For getting customer_id try like this
+//                if let qrPoints = json["qrPoints"] as? [[String: Any]] {
+//                    var parsedPoints : [QRPoint] = []
+//                    for qrPointJson in qrPoints {
+//                        let qrPointUuidString = qrPointJson["id"] as? String
+//                        guard qrPointUuidString != nil else {
+//                            continue
+//                        }
+//                        let uuid = NSUUID(uuidString: qrPointUuidString!)
+//                        let qrPointLabel = qrPointJson["label"] as? String
+//                        let qrPointMuniMapId = qrPointJson["munimap"] as? String
+//
+//                        let rooms : [ARRoom] = []
+//
+//
+//                        if uuid != nil && qrPointLabel != nil && qrPointMuniMapId != nil {
+//                            parsedPoints.append(QRPoint(id: uuid!, label: qrPointLabel!, muniMapId: qrPointMuniMapId!, rooms: rooms))
+//                        }
+//                    }
+//                    return parsedPoints
+//                }
+//            }
+//        } catch let error {
+//            print("QRPoints JSON parsing error: " + error.localizedDescription)
+//        }
+//        return nil
     }
 }

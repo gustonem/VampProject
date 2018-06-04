@@ -14,6 +14,10 @@
 		471959BB20A7775F00C66F18 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471959BA20A7775F00C66F18 /* QRScannerViewController.swift */; };
 		4719FD42209BD3FC0085ECC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */; };
 		4719FD46209BD59B0085ECC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4719FD45209BD59B0085ECC5 /* Assets.xcassets */; };
+		4720D64F20C5A394009AF707 /* ARDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720D64E20C5A394009AF707 /* ARDimensions.swift */; };
+		4720D65120C5B228009AF707 /* GetPointsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720D65020C5B228009AF707 /* GetPointsResponse.swift */; };
+		47265E3520C4A565000AC31D /* ARRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47265E3420C4A565000AC31D /* ARRoom.swift */; };
+		47265E3720C4A59F000AC31D /* ARPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47265E3620C4A59F000AC31D /* ARPosition.swift */; };
 		476172B4207E1CED00AE8922 /* QRMapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476172AC207E1CEC00AE8922 /* QRMapperViewController.swift */; };
 		476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 476172AE207E1CED00AE8922 /* VampProject.xcdatamodeld */; };
 		476172BE207E200200AE8922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476172BD207E200200AE8922 /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 		471959BA20A7775F00C66F18 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		4719FD41209BD3FC0085ECC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4719FD45209BD59B0085ECC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = VampProject/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		4720D64E20C5A394009AF707 /* ARDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDimensions.swift; sourceTree = "<group>"; };
+		4720D65020C5B228009AF707 /* GetPointsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPointsResponse.swift; sourceTree = "<group>"; };
+		47265E3420C4A565000AC31D /* ARRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRoom.swift; sourceTree = "<group>"; };
+		47265E3620C4A59F000AC31D /* ARPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPosition.swift; sourceTree = "<group>"; };
 		476172AC207E1CEC00AE8922 /* QRMapperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRMapperViewController.swift; sourceTree = "<group>"; };
 		476172AF207E1CED00AE8922 /* VampProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VampProject.xcdatamodel; sourceTree = "<group>"; };
 		476172BD207E200200AE8922 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				4711576920B1F62700F5DA9A /* QRPoint.swift */,
+				47265E3420C4A565000AC31D /* ARRoom.swift */,
+				47265E3620C4A59F000AC31D /* ARPosition.swift */,
+				4720D64E20C5A394009AF707 /* ARDimensions.swift */,
+				4720D65020C5B228009AF707 /* GetPointsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,10 +450,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				47CC65872098E4A200D345CC /* LocatorScene.swift in Sources */,
+				4720D64F20C5A394009AF707 /* ARDimensions.swift in Sources */,
 				476DADD620987FF4003BF687 /* ARLocatorViewController.swift in Sources */,
 				DEE3F1DF20865EF000346504 /* SubjectCell.swift in Sources */,
 				476172B4207E1CED00AE8922 /* QRMapperViewController.swift in Sources */,
 				47E1F785208FE5F3009F9D48 /* MuniMapViewController.swift in Sources */,
+				4720D65120C5B228009AF707 /* GetPointsResponse.swift in Sources */,
 				DEE3F1D5208522E800346504 /* Day.swift in Sources */,
 				DEE3F1DB208522F900346504 /* SubjectsTableViewController.swift in Sources */,
 				DEE3F1DA208522F900346504 /* TimeTableViewController.swift in Sources */,
@@ -452,8 +466,10 @@
 				4711576A20B1F62700F5DA9A /* QRPoint.swift in Sources */,
 				DEE3F1DC208522F900346504 /* DaysTableViewController.swift in Sources */,
 				471959BB20A7775F00C66F18 /* QRScannerViewController.swift in Sources */,
+				47265E3720C4A59F000AC31D /* ARPosition.swift in Sources */,
 				DE00F61B205BA29100D4F48F /* AppDelegate.swift in Sources */,
 				471959B920A7530B00C66F18 /* simd+ext.swift in Sources */,
+				47265E3520C4A565000AC31D /* ARRoom.swift in Sources */,
 				476172B6207E1CED00AE8922 /* VampProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

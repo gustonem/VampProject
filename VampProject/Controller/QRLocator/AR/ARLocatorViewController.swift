@@ -17,6 +17,20 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
     var hasSetWorldOrigin = false
     var isPlaneSelected = false
     
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        sceneView.delegate = self
+        UIApplication.shared.isIdleTimerDisabled = true
+        resetTracking()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sceneView.session.pause()
+    }
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
         guard let scannedPoint = self.getScannedPoint() else {
@@ -26,25 +40,18 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         if !hasSetWorldOrigin {
             hasSetWorldOrigin = true
             
-            var transform = matrix_float4x4()
-            
-            let positions = imageAnchor.transform.columns.3
-            transform.columns.3 = [positions.x, positions.y, positions.z, 1.0]
-            transform.columns.2 = [0.0, 0.0, 1.0, 0.0]
-            transform.columns.1 = [0.0, 1.0, 0.0, 0.0]
-            transform.columns.0 = [1.0, 0.0, 0.0, 0.0]
-            sceneView.session.setWorldOrigin(relativeTransform: transform)
-            sceneView.session.setWorldOrigin(relativeTransform: transform)
+            transformWorldOrigin(imageAnchor: imageAnchor)
             
             let referenceImage = imageAnchor.referenceImage
-            
             drawPosterAsync(node: node, referenceImage: referenceImage)
             addRoomsAsync(rooms: scannedPoint.rooms)
         }
     }
     
-    func drawPosterAsync(node: SCNNode, referenceImage: ARReferenceImage) {
+    private func drawPosterAsync(node: SCNNode, referenceImage: ARReferenceImage) {
         DispatchQueue.main.async {
+            
+            // TODO implement custom SKScene
             
             // Create a plane to visualize the initial position of the detected image.
             let plane = SCNPlane(width: referenceImage.physicalSize.width * 1.5,
@@ -53,7 +60,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
             planeNode.opacity = 1
             plane.materials = [SCNMaterial()]
             
-//            let pointLabel = scannedPoint.label // TODO implement
+            // let pointLabel = scannedPoint.label // TODO implement
             
             plane.materials[0].diffuse.contents = UIImage(named: "Point FI MUNI Main Hall")!
             
@@ -63,30 +70,31 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
             
             // Add the plane visualization to the scene.
             node.addChildNode(planeNode)
+            
+            // TODO
         }
     }
     
-    func addRoomsAsync(rooms: [ARRoom]) {
-        
+    private func addRoomsAsync(rooms: [ARRoom]) {
         DispatchQueue.main.async {
             for room in rooms {
                 self.sceneView.scene.rootNode.addChildNode(
-                    self.getRoomNode(widthMeters: room.dimensions.width, heightMeters: room.dimensions.height, lenghtMeters: room.dimensions.length,
+                    ARLocatorViewController.getRoomNode(widthMeters: room.dimensions.width, heightMeters: room.dimensions.height, lenghtMeters: room.dimensions.length,
                                      rightMeters: room.position.right!, upMeters: room.position.up!, frontMeters: room.position.front!))
             }
         }
     }
     
-    func getRoomNode(widthMeters: CGFloat, heightMeters: CGFloat, lenghtMeters: CGFloat,
+    private static func getRoomNode(widthMeters: CGFloat, heightMeters: CGFloat, lenghtMeters: CGFloat,
                      rightMeters: CGFloat, upMeters: CGFloat, frontMeters: CGFloat) -> SCNNode {
         let cubeNode = SCNNode(geometry: getMeshBox(width: widthMeters, height: heightMeters, length:
             lenghtMeters, chamferRadius: 0))
         cubeNode.position = SCNVector3(rightMeters, upMeters, -frontMeters) // SceneKit/AR coordinates are in meters
-        cubeNode.runAction(self.objectHighlightAction)
+//        cubeNode.runAction(self.objectHighlightAction)
         return cubeNode
     }
     
-    func getMeshBox(width: CGFloat, height: CGFloat, length: CGFloat, chamferRadius: CGFloat) -> SCNBox {
+    private static func getMeshBox(width: CGFloat, height: CGFloat, length: CGFloat, chamferRadius: CGFloat) -> SCNBox {
         
         let sm = "float u = _surface.diffuseTexcoord.x; \n" +
             "float v = _surface.diffuseTexcoord.y; \n" +
@@ -107,7 +115,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         return box
     }
     
-    func getBox(width: CGFloat, height: CGFloat, length: CGFloat, chamferRadius: CGFloat) -> SCNBox {
+    private static func getBox(width: CGFloat, height: CGFloat, length: CGFloat, chamferRadius: CGFloat) -> SCNBox {
 
         let box = SCNBox(width: width, height:height, length: length, chamferRadius: chamferRadius)
         
@@ -120,15 +128,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         return box
     }
     
-    func setPlaneTexture(node: SCNNode) {
-        if let geometryNode = node.childNodes.first {
-            if node.childNodes.count > 0 {
-                geometryNode.removeFromParentNode()
-            }
-        }
-    }
-    
-    func resetTracking() {
+    private func resetTracking() {
         guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
             fatalError("Missing expected asset catalog resources.")
         }
@@ -138,29 +138,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        sceneView.delegate = self
-        UIApplication.shared.isIdleTimerDisabled = true
-        resetTracking()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        sceneView.session.pause()
-    }
-    
-    func getScannedPoint() -> QRPoint? {
+    private func getScannedPoint() -> QRPoint? {
         guard let scannerVc = self.parent as? QRMapperViewController else {
             return nil
         }
@@ -168,26 +146,43 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         return scannerVc.qrPoint
     }
     
-    var objectHighlightAction: SCNAction {
-        let dur = 0.50
-        let toUp:CGFloat = 0.85
-        let toDown:CGFloat = 0.15
-        return .sequence([
-            .wait(duration: dur * 2),
-            .fadeOpacity(to: toUp, duration: dur),
-            .fadeOpacity(to: toDown, duration: dur),
-            .fadeOpacity(to: toUp, duration: dur),
-            .fadeOpacity(to: toDown, duration: dur),
-            .fadeOpacity(to: toUp, duration: dur),
-            .fadeOpacity(to: toDown, duration: dur),
-            .fadeOpacity(to: toUp, duration: dur),
-            .fadeOpacity(to: toDown, duration: dur),
-            .fadeIn(duration: dur)
-            ])
+    private func transformWorldOrigin(imageAnchor: ARImageAnchor) {
+        var transform = matrix_float4x4()
+        let positions = imageAnchor.transform.columns.3
+        transform.columns.3 = [positions.x, positions.y, positions.z, 1.0]
+        transform.columns.2 = [0.0, 0.0, 1.0, 0.0]
+        transform.columns.1 = [0.0, 1.0, 0.0, 0.0]
+        transform.columns.0 = [1.0, 0.0, 0.0, 0.0]
+        sceneView.session.setWorldOrigin(relativeTransform: transform)
+        sceneView.session.setWorldOrigin(relativeTransform: transform)
     }
 }
 
+//    var objectHighlightAction: SCNAction {
+//        let dur = 0.50
+//        let toUp:CGFloat = 0.85
+//        let toDown:CGFloat = 0.15
+//        return .sequence([
+//            .wait(duration: dur * 2),
+//            .fadeOpacity(to: toUp, duration: dur),
+//            .fadeOpacity(to: toDown, duration: dur),
+//            .fadeOpacity(to: toUp, duration: dur),
+//            .fadeOpacity(to: toDown, duration: dur),
+//            .fadeOpacity(to: toUp, duration: dur),
+//            .fadeOpacity(to: toDown, duration: dur),
+//            .fadeOpacity(to: toUp, duration: dur),
+//            .fadeOpacity(to: toDown, duration: dur),
+//            .fadeIn(duration: dur)
+//            ])
+//    }
 
+//    func setPlaneTexture(node: SCNNode) {
+//        if let geometryNode = node.childNodes.first {
+//            if node.childNodes.count > 0 {
+//                geometryNode.removeFromParentNode()
+//            }
+//        }
+//    }
 
 
 //override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

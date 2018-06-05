@@ -62,7 +62,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
             
             // let pointLabel = scannedPoint.label // TODO implement
             
-            plane.materials[0].diffuse.contents = UIImage(named: "Point FI MUNI Main Hall")!
+            plane.materials[0].diffuse.contents = UIImage(named: "QR Point")!
             
             planeNode.eulerAngles.x = -.pi / 2
             

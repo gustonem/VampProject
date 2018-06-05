@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "smart-uni-point-a4.png"
+      "filename" : "smart-uni-point-a4-9f3fafea-05a9-4c85-9270-36eda0176315.png"
     }
   ],
   "info" : {
@@ -10,7 +10,7 @@
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 10,
+    "width" : 21,
     "unit" : "centimeters"
   }
 }

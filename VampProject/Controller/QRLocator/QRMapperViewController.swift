@@ -27,7 +27,7 @@ class QRMapperViewController: UIViewController {
     private func setupView() {
         setupSegmentedControl()
         
-        updateView()
+        initView()
     }
     
     //MARK: Actions
@@ -43,12 +43,20 @@ class QRMapperViewController: UIViewController {
         segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
         
         // Select First Segment
-        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = 1
     }
     
     @objc
     func selectionDidChange(_ sender: UISegmentedControl) {
         updateView()
+    }
+    
+    private func initView() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            add(asChildViewController: arViewController)
+        } else {
+            add(asChildViewController: mapViewController)
+        }
     }
     
     private func updateView() {

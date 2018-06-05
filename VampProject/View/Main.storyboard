@@ -375,23 +375,7 @@
                     <view key="view" contentMode="scaleToFill" id="UYV-s4-dIS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJ9-JP-Rm1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="OJ9-JP-Rm1" firstAttribute="leading" secondItem="UYV-s4-dIS" secondAttribute="leading" id="Dii-uc-7lh"/>
-                            <constraint firstItem="OJ9-JP-Rm1" firstAttribute="top" secondItem="UYV-s4-dIS" secondAttribute="top" id="Eds-JH-nkd"/>
-                            <constraint firstItem="OJ9-JP-Rm1" firstAttribute="width" secondItem="UYV-s4-dIS" secondAttribute="width" id="Lb9-PV-UeK"/>
-                            <constraint firstItem="OJ9-JP-Rm1" firstAttribute="height" secondItem="UYV-s4-dIS" secondAttribute="height" id="RPm-9e-0gl"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="czD-Iv-unL"/>
                     </view>
                 </viewController>

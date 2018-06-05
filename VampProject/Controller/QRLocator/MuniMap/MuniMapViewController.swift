@@ -16,13 +16,14 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
     
     let baseMuniMapUrl: String! = "http://server-smart-university.a3c1.starter-us-west-1.openshiftapps.com/munimap"
     
-    var webView: WKWebView!
+//    var webView: WKWebView!
     
     override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
+        super.loadView()
+//        let webConfiguration = WKWebViewConfiguration()
+//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+//        webView.uiDelegate = self
+//        view = webView
     }
     
     override func viewDidLoad() {
@@ -38,15 +39,15 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
         }
 
         //        let muniMapId = scannedPoint.muniMapId // TODO implement
-        let muniMapRequest = URLRequest(url: URL(string: "sme.sk")!)
-
-        webView.load(muniMapRequest)
-//        let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height))
-////        myWebView.delegate = self
-//        self.view.addSubview(myWebView)
-//        let url = URL (string: baseMuniMapUrl);
-//        let request = URLRequest(url: url! as URL);
-//        myWebView.loadRequest(request);
+//        let muniMapRequest = URLRequest(url: URL(string: "sme.sk")!)
+//
+//        webView.load(muniMapRequest)
+        let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+//        myWebView.delegate = self
+        let url = URL (string: baseMuniMapUrl);
+        let request = URLRequest(url: url! as URL);
+        myWebView.loadRequest(request);
+        self.view.addSubview(myWebView)
     }
     
     func getScannedPoint() -> QRPoint? {

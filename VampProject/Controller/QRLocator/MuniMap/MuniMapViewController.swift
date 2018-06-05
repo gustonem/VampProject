@@ -20,10 +20,6 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
     
     override func loadView() {
         super.loadView()
-//        let webConfiguration = WKWebViewConfiguration()
-//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-//        webView.uiDelegate = self
-//        view = webView
     }
     
     override func viewDidLoad() {
@@ -33,18 +29,17 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let scannedPoint = self.getScannedPoint() else {
-            // TODO close self
-            return
+        let urlQuery : String
+        if let scannedPoint = self.getScannedPoint() {
+            urlQuery = "?id=\(scannedPoint.muniMapId)"
+        } else {
+            urlQuery = ""
         }
 
-        //        let muniMapId = scannedPoint.muniMapId // TODO implement
-//        let muniMapRequest = URLRequest(url: URL(string: "sme.sk")!)
-//
-//        webView.load(muniMapRequest)
+        
         let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
 //        myWebView.delegate = self
-        let url = URL (string: baseMuniMapUrl);
+        let url = URL (string: baseMuniMapUrl + urlQuery);
         let request = URLRequest(url: url! as URL);
         myWebView.loadRequest(request);
         self.view.addSubview(myWebView)

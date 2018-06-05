@@ -6,17 +6,11 @@
 //  Copyright © 2018 Gusto Nemec. All rights reserved.
 //
 
-
-import os.log
 import UIKit
-import ARKit
-import WebKit
 
-class MuniMapViewController: UIViewController, WKUIDelegate {
+class MuniMapViewController: UIViewController {
     
     let baseMuniMapUrl: String! = "http://server-smart-university.a3c1.starter-us-west-1.openshiftapps.com/munimap"
-    
-//    var webView: WKWebView!
     
     override func loadView() {
         super.loadView()
@@ -36,9 +30,7 @@ class MuniMapViewController: UIViewController, WKUIDelegate {
             urlQuery = ""
         }
 
-        
         let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-//        myWebView.delegate = self
         let url = URL (string: baseMuniMapUrl + urlQuery);
         let request = URLRequest(url: url! as URL);
         myWebView.loadRequest(request);

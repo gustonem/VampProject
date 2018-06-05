@@ -1,10 +1,9 @@
-ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/QRCodeReader.swift" "${PODS_ROOT}/EstimoteBluetoothScanning/EstimoteBluetoothScanning" "${PODS_ROOT}/EstimoteProximitySDK/EstimoteProximitySDK"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/EstimoteBluetoothScanning/EstimoteBluetoothScanning" "${PODS_ROOT}/EstimoteProximitySDK/EstimoteProximitySDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EstimoteBluetoothScanning" "${PODS_ROOT}/Headers/Public/EstimoteProximitySDK"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/QRCodeReader.swift/QRCodeReader.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "EstimoteBluetoothScanning" -framework "EstimoteProximitySDK" -framework "QRCodeReader"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/EstimoteBluetoothScanning" -isystem "${PODS_ROOT}/Headers/Public/EstimoteProximitySDK"
+OTHER_LDFLAGS = $(inherited) -framework "EstimoteBluetoothScanning" -framework "EstimoteProximitySDK"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

@@ -29,12 +29,15 @@ class MuniMapViewController: UIViewController {
         } else {
             urlQuery = ""
         }
-
+        
         let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        let url = URL (string: baseMuniMapUrl + urlQuery);
-        let request = URLRequest(url: url! as URL);
-        myWebView.loadRequest(request);
         self.view.addSubview(myWebView)
+        
+        DispatchQueue.main.async {
+            let url = URL (string: self.baseMuniMapUrl + urlQuery)
+            let request = URLRequest(url: url! as URL)
+            myWebView.loadRequest(request)
+        }
     }
     
     func getScannedPoint() -> QRPoint? {

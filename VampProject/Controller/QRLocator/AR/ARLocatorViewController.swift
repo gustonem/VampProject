@@ -135,7 +135,7 @@ class ARLocatorViewController: UIViewController, ARSCNViewDelegate {
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = referenceImages
-        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     private func getScannedPoint() -> QRPoint? {

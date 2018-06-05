@@ -3,7 +3,4 @@
 *.xcbkptlist
 /Pods/*
 /Podfile.lock
-/Pods/Manifest.lock
-/Pods/Pods.xcodeproj/project.pbxproj
-/Pods/Target Support Files/Pods-VampProject/Pods-VampProject-resources.sh
 /VampProject.xcodeproj/project.pbxproj
